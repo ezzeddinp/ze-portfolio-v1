@@ -61,5 +61,8 @@
     "typewriter-effect": "^2.20.1",
     "usehooks-ts": "^2.14.0",
     "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@types/react-syntax-highlighter": "^15.5.13"
   }
 }

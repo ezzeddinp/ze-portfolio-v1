@@ -1,0 +1,1 @@
+export { default as EducationSectionComponent } from "./edu/EducationSectionComponent";

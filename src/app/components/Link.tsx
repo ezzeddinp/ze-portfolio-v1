@@ -1,0 +1,55 @@
+import React from "react";
+
+// Props
+export interface Props {
+  text: string;
+  url?: string;
+  size?: string;
+  theme?: string;
+  flip?: boolean;
+}
+
+const Element: React.FC<Props> = ({ text, url, size = "text-base", theme = "base", flip = false }) => {
+  const themes = {
+    base: ["text-zinc-900", "dark:text-zinc-100"],
+    alt: ["text-red-600", "dark:text-red-400"],
+  };
+
+  const ElementTag = url ? "a" : "div";
+
+  return (
+    <ElementTag
+      href={url}
+      className={`group flex w-fit items-center gap-1 font-semibold ${size} ${themes[theme].join(
+        " "
+      )} ${flip ? "flex-row-reverse" : "flex-row"}`}
+    >
+      {text}
+      {flip ? (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="h-[.75em] w-auto transform transition duration-100 group-hover:-translate-x-1"
+        >
+          <path d="M15.75 19.5L8.25 12l7.5-7.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="h-[.75em] w-auto transform transition duration-100 group-hover:translate-x-1"
+        >
+          <path d="M8.25 4.5l7.5 7.5-7.5 7.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      )}
+    </ElementTag>
+  );
+};
+
+export default Element;

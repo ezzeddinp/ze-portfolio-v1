@@ -1,0 +1,12 @@
+<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <g stroke-width="1" stroke-linejoin="bevel">
+    <path d="M451 229L900 218L506 0Z" fill="#b3840c" stroke="#b3840c"></path>
+    <path d="M900 218L900 0L506 0Z" fill="#000000" stroke="#000000"></path>
+    <path d="M451 229L510 600L900 218Z" fill="#e5af1c" stroke="#e5af1c"></path>
+    <path d="M510 600L900 600L900 218Z" fill="#b3840c" stroke="#b3840c"></path>
+    <path d="M451 229L0 600L510 600Z" fill="#ffc623" stroke="#ffc623"></path>
+    <path d="M0 0L0 250L451 229Z" fill="#e5af1c" stroke="#e5af1c"></path>
+    <path d="M506 0L0 0L451 229Z" fill="#ffc623" stroke="#ffc623"></path>
+    <path d="M0 250L0 600L451 229Z" fill="#ffc623" stroke="#ffc623"></path>
+  </g>
+</svg>

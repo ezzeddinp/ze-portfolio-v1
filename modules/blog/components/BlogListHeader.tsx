@@ -11,7 +11,7 @@ interface BlogListHeaderProps {
 
 export default function BlogListHeader({ viewOption, setViewOption }: BlogListHeaderProps) {
   return (
-    <div className="flex flex-row items-center justify-between text-center text-[15px]">
+    <div className="mt-6 flex flex-row items-center justify-between text-center text-[15px]">
       <SectionHeading title="Latest Articles" />
       <div className="flex flex-row items-center justify-center text-center cursor-pointer gap-2 px-1">
         <ViewOptions

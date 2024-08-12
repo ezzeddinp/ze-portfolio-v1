@@ -10,7 +10,7 @@ export default function Card({ children, className = '', ...others }: CardProps)
   return (
     <div
       data-testid="card"
-      className={`py-[50px] rounded-xl shadow-sm transition-all duration-300 lg:hover:shadow-md ${className} `}
+      className={`px-[10px] py-[17px] lg:py-[20px] flex flex-col lg:flex-row h-full rounded-xl shadow-sm transition-all duration-300 lg:hover:shadow-md ${className} `}
       {...others}
     >
       {children}

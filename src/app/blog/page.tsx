@@ -5,6 +5,7 @@ import PageHeading from '../../common/components/elements/PageHeading'
 import { METADATA } from '../../common/constants/metadata'
 
 import Blog from '../../../modules/blog'
+import Footer from '../components/Footer/footer'
 
 export const metadata: Metadata = {
   title: `Blog ${METADATA.exTitle}`,
@@ -21,10 +22,13 @@ const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant 
 export default async function BlogPage() {
   return (
     <>
-      <Container data-aos="fade-left">
-        <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
-        <Blog />
-      </Container>
+      <div className='flex flex-col justify-stretch items-center'>
+        <Container data-aos="fade-left">
+          <PageHeading title={PAGE_TITLE} description={PAGE_DESCRIPTION} />
+          <Blog />
+        </Container>
+      </div>
+        <Footer />
     </>
   )
 }

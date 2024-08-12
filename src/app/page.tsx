@@ -1,22 +1,23 @@
 import React from 'react'
 import Content from './components/contents/page';
 import Container from "../app/container/page"
-import MainPage from './layouts/page';
-import SkillList from '@/home/components/SkillList';
-// import EducationSectionComponent from '@/components/edu/EducationSectionComponent';
-import Carousel from './js/index';
-import { BentoGridThirdDemo } from '@/components/BentoGridDemo';
+// import { FeaturesSectionDemo } from '@/components/ui/feature-section';
+import Footer from './components/Footer/footer';
+import ExpandableCardMain from '@/components/blocks/page';
+import SkillMain from '@/home/page';
+import IntroMain from './layouts/page';
 
 const ProjectPage = () => {
   return (
     <>
-      <div>
-        <MainPage />
-        {/* <EducationSectionComponent initial="hidden" whileInView="show" /> */}
+      <div className='z-40'>
+        <IntroMain />
         <Container> 
+          <SkillMain />
           <Content />
-          <BentoGridThirdDemo />
-          <SkillList />
+          {/* <FeaturesSectionDemo /> */}
+          <ExpandableCardMain />
+          <Footer />
         </Container>
       </div>
     </>

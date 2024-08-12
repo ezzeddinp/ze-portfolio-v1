@@ -1,12 +1,11 @@
 'use client'
 
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { cn } from "../../lib/utils";
 import { ModeToggle } from "../theme-toggle";
 import Logo from "../Header/Logo";
-import Sidebar from "@/common/components/layouts/sidebar";
 
 export default function MainNav({
 	className,
@@ -42,7 +41,7 @@ export default function MainNav({
 	return (
 		<>
 			<div
-				className={`hidden lg:flex fixed top-3 w-max h-max rounded-full backdrop-blur-lg  flex-row justify-center text-center items-center right-1/2 translate-x-1/2 z-40 ${className}`}
+				className={`hidden z-[51] lg:flex fixed top-3 w-max h-max rounded-full backdrop-blur-lg  flex-row justify-center text-center items-center right-1/2 translate-x-1/2 ${className}`}
 				{...props}
 			>
 				<Logo />

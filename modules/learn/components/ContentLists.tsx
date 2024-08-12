@@ -1,4 +1,4 @@
-'use client'
+"use client"
 
 import { fetcher } from '../../../services/fetcher'
 import { motion } from 'framer-motion'

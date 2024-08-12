@@ -2,6 +2,7 @@ import React from "react";
 
 // Props
 export interface Props {
+  target: "_blank" | "_self" | "_parent" | "_top";
   text: string;
   url?: string;
   size?: string;
@@ -9,16 +10,16 @@ export interface Props {
   flip?: boolean;
 }
 
-const Element: React.FC<Props> = ({ text, url, size = "text-base", theme = "base", flip = false }) => {
+const Element: React.FC<Props> = ({ target, text, url, size = "text-base", theme = "base", flip = false }) => {
   const themes = {
     base: ["text-zinc-900", "dark:text-zinc-100"],
     alt: ["text-red-600", "dark:text-red-400"],
   };
 
   const ElementTag = url ? "a" : "div";
-
   return (
     <ElementTag
+    target={target}
       href={url}
       className={`group flex w-fit items-center gap-1 font-semibold ${size} ${themes[theme].join(
         " "

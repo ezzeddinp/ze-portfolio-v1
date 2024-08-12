@@ -1,51 +1,48 @@
-'use client'
+"use client";
 
-import dynamic from 'next/dynamic'
-import { usePathname, useSearchParams } from 'next/navigation'
+import dynamic from 'next/dynamic';
+import { usePathname, useSearchParams } from 'next/navigation';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import React, { ReactNode, useEffect } from 'react';
+import MobileHeader from './MobileHeader';
 
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import React, { ReactNode, useEffect } from 'react'
-
-import ChatOverlay from '../elements/ChatOverlay'
-// import RunningText from '../elements/RunningText'
-// import BottomNavigation from './LeftCollapseNavigation'
-import MobileHeader from './MobileHeader'
-
-const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr: false })
+const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr: false });
 
 interface LayoutsProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function Layouts({ children }: LayoutsProps) {
-  const pathName = usePathname()
-  const searchParams = useSearchParams()
-  const readMode = searchParams.get('read-mode')
+  const pathName = usePathname();
+  const searchParams = useSearchParams();
+  const readMode = searchParams.get('read-mode');
 
-  const hideSidebar = ['/me', '/board'].includes(pathName) || readMode === 'true'
+  const hideSidebar = ['/me', '/board'].includes(pathName) || readMode === 'true';
 
   useEffect(() => {
     AOS.init({
       duration: 800,
       delay: 50
-    })
-  }, [])
+    });
+  }, []);
+
   return (
-    <div className="flex flex-col justify-center">
-      <div className="flex w-full flex-col justify-center lg:flex-row lg:gap-5">
+    <div className="flex flex-col min-h-screen">
+      {/* Container for sticky header and main content */}
+      <div className="flex flex-col lg:flex-row flex-1">
+        {/* Conditionally render MobileHeader based on pathName and readMode */}
         {!hideSidebar && (
-          <>
+          <div className="w-full lg:w-auto flex-shrink-0">
             <MobileHeader />
-          </>
+          </div>
         )}
-        {/* <main className="no-scrollbar w-full scroll-smooth transition-all duration-300 lg:ml-10 lg:min-h-screen lg:max-w-[854px]"> */}
+        {/* Main content area */}
+        <main className="flex-1 overflow-y-auto pt-[70px]"> {/* Add padding top to accommodate the fixed header */}
           {children}
-        {/* </main> */}
+        </main>
       </div>
-      {/* {!hideSidebar && <BottomNavigation />} */}
       <Notif />
-      {/* <ChatOverlay /> */}
     </div>
-  )
+  );
 }

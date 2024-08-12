@@ -23,7 +23,7 @@ import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
 
 import { MenuItemProps } from '@/types/menu'
 
-const iconSize = 20
+const iconSize = 25
 
 export const MENU_ITEMS: MenuItemProps[] = [
   {

@@ -1,15 +1,9 @@
-import Image from "next/image"
+
 import Link from "next/link"
-import { useState } from "react"
 
 
-import { PROFILE_URL } from '@/common/constants'
-import { MENU_ITEMS } from '@/common/constants/menu'
 
-import Copyright from "@/common/components/elements/Copyright"
-import ToggleThemeIcon from "@/common/components/elements/ToggleThemeIcon"
-import MenuItem from "@/common/components/layouts/sidebar/MenuItem"
-import Profile from '../../../common/components/layouts/sidebar/Profile'
+
 
 import { MdVerified as VerifiedIcon } from 'react-icons/md'
 import Tooltip from "@/common/components/elements/Tooltip"
@@ -40,7 +34,7 @@ const Logo = () => {
         {/* )}
           </div> */}
       {/* </div> */}
-      <div className="mt-1 flex items-center gap-2">
+      <div className="flex items-center justify-center gap-2 p-4">
           <Link href="/" passHref>
             <h2 className="font-sora flex-grow whitespace-nowrap text-black dark:text-white text-lg font-medium lg:text-lg">zeddin</h2>
           </Link>

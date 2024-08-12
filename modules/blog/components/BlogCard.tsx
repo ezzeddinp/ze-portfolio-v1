@@ -68,7 +68,7 @@ export default function BlogCard({
     <Card
       onClick={handleCardClick}
       className={clsxm(
-        ' flex w-full cursor-pointer items-center border border-neutral-300  dark:bg-black dark:border-zinc-500 sm:flex-row lg:hover:scale-[102%] md:hover:scale-[102%] hover:scale-[102%]',
+        ' flex w-full cursor-pointer items-center border border-neutral-600  dark:bg-black dark:border-zinc-500 sm:flex-row lg:hover:scale-[102%] md:hover:scale-[102%] hover:scale-[102%]',
         viewOption === 'grid' ? 'w-full !flex-col sm:h-full' : '!flex-row sm:p-5 sm:px-6',
         isCarousel && 'min-w-[350px]',
         !isExcerpt && 'sm:h-[320px]'
@@ -81,7 +81,7 @@ export default function BlogCard({
           height={100}
           alt={title}
           className={clsxm(
-            'w-full object-cover sm:h-[8.5rem] sm:rounded-xl',
+            'w-full h-full object-cover rounded-[3px] sm:h-[8.5rem] sm:rounded-xl',
             viewOption === 'grid' ? '!h-48 !rounded-b-none !rounded-t-xl' : ''
           )}
         />

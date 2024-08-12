@@ -5,7 +5,7 @@ import { STACKS } from '@/common/constants/stacks';
 
 export default function SkillCard({ skill }: { skill: string }) {
   return (
-    <div className="flex items-center justify-center px-2"> {/* Add flex styling */}
+    <div className="flex items-center justify-center px-2 py-[20px] hover:scale-110 hover:transition hover:ease-in-out transition duration-300"> {/* Add flex styling */}
       <Tooltip title={skill}>
         {STACKS[skill]}
       </Tooltip>

@@ -3,7 +3,7 @@ import axios from 'axios'
 import { IZeddinData } from '@/common/types'
 
 export async function getZeddinData(): Promise<IZeddinData> {
-  const URL = process.env.CODEBAYU_DATA
+  const URL = process.env.ZEDDIN_DATA
   try {
     const response = await axios.get(String(URL))
     if (response?.status !== 200) return {} as IZeddinData

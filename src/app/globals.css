@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+/* @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+ */
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -13,66 +18,49 @@ html {
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
-
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
- 
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
- 
     --primary: 220.9 39.3% 11%;
     --primary-foreground: 210 20% 98%;
- 
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
- 
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
- 
     --accent: 220 14.3% 95.9%;
     --accent-foreground: 220.9 39.3% 11%;
- 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
-
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 224 71.4% 4.1%;
- 
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 224 71.4% 4.1%;
     --foreground: 210 20% 98%;
- 
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
- 
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
- 
     --primary: 210 20% 98%;
     --primary-foreground: 220.9 39.3% 11%;
- 
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
- 
     --muted: 215 27.9% 16.9%;
     --muted-foreground: 217.9 10.6% 64.9%;
- 
     --accent: 215 27.9% 16.9%;
     --accent-foreground: 210 20% 98%;
- 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 20% 98%;
- 
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -103,14 +91,9 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   animation: fadeIn 2s ease-in-out forwards;
-  /* Add a blur effect to the background */
   background-color: white;
-  /* Add a semi-transparent background color */
-  /* Hide the scrollbar */
 }
 
-
-/* Media query for light theme */
 @media (prefers-color-scheme: light) {
   body {
     background: linear-gradient(white, #f0f0f0);
@@ -126,14 +109,9 @@ body::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
-/* globals.css */
-
-/* Dark mode styles */
 .dark .dark\:bg-black {
   background: 0 0 0 0;
-  /* Add more dark mode styles here */
 }
-
 
 .fade-in-out {
   opacity: 0;
@@ -148,7 +126,6 @@ body::-webkit-scrollbar-thumb {
   opacity: 0;
 }
 
-
 #visual {
   animation: rotate 5s linear infinite;
 }
@@ -162,7 +139,6 @@ body::-webkit-scrollbar-thumb {
     transform: rotate(360deg);
   }
 }
-
 
 @keyframes fadeIn {
   0% {
@@ -180,21 +156,15 @@ body::-webkit-scrollbar-thumb {
   transform: rotate(45deg);
 }
 
-/* CSS */
 div.overflow-y-scroll::-webkit-scrollbar {
   width: 0.4em;
-  /* Set the width of the scrollbar */
 }
 
 div.overflow-y-scroll::-webkit-scrollbar-thumb {
   background-color: #888;
-  /* Color of the thumb (draggable part of the scrollbar) */
   border-radius: 2px;
 }
 
 div.overflow-y-scroll::-webkit-scrollbar-thumb:hover {
   background-color: #555;
-  /* Color of the thumb on hover */
 }
-
-/* For Firefox */

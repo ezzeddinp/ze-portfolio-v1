@@ -1,75 +1,102 @@
-"use client"
+"use client";
 
-import Link from 'next/link'
+import Link from 'next/link';
+import clsx from 'clsx';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { MdVerified as VerifiedIcon } from 'react-icons/md';
+import { useMenu } from '../../../../stores/menu';
+import useIsMobile from '../../../../hooks/useIsMobile';
+import { ModeToggle } from '@/app/components/theme-toggle';
+import MobileMenu from './sidebar/MobileMenu';
+import MobileMenuButton from './sidebar/MobileMenuButton';
+import TooltipVerified from '../elements/TooltipVerified';
 
-import clsx from 'clsx'
-import { AnimatePresence } from 'framer-motion'
-import React, { useEffect } from 'react'
-import { MdVerified as VerifiedIcon } from 'react-icons/md'
+const menuVariants = {
+  hidden: { x: '100%', opacity: 0 },
+  visible: { x: '0%', opacity: 1 },
+  exit: { x: '100%', opacity: 0 },
+};
 
-import { PROFILE_URL } from '@/common/constants'
-
-import { useMenu } from '../../../../stores/menu'
-
-import useIsMobile from '../../../../hooks/useIsMobile'
-
-import Image from '../elements/Image'
-import { ModeToggle } from '@/app/components/theme-toggle'
-import Tooltip from '../elements/Tooltip'
-import MobileMenu from './sidebar/MobileMenu'
-import MobileMenuButton from './sidebar/MobileMenuButton'
-
-export default function MobileHeader() {
-  const isMobile = useIsMobile()
-  const { isOpen, toggleMenu } = useMenu()
-  const imageSize = isMobile ? 40 : 100
+export default function MobileHeader(): JSX.Element {
+  const isMobile = useIsMobile();
+  const { isOpen, toggleMenu } = useMenu();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'auto'
-    }
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
 
-    return () => {
-      document.body.style.overflow = 'auto'
-    }
-  }, [isOpen])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : 'auto';
+  }, [isOpen]);
+
   return (
-    <div className="flex flex-col rounded-b-md px-4 py-4 shadow-sm lg:hidden">
-      <div className={`flex w-full justify-between ${isOpen ? 'items-start' : 'items-center'}`}>
-        <div className={`flex ${isOpen ? 'flex-col space-y-3' : 'flex-row space-x-3'}`}>
-          <div className="z-10 w-max rounded-full border-2 border-white shadow-md dark:border-neutral-800">
-            <Image
-              src={PROFILE_URL}
-              alt="profile"
-              width={isOpen ? 80 : imageSize * 0.9}
-              height={isOpen ? 80 : imageSize * 0.9}
-              rounded="rounded-full"
-            />
-          </div>
-          <div className="mt-1 flex items-center gap-2">
+    <div
+      className={clsx(
+        'fixed top-0 left-0 right-0 flex flex-col rounded-b-md px-[12.5px] py-[15px] shadow-sm lg:hidden z-50 transition-all duration-300',
+        isScrolled ? 'bg-white dark:bg-black dark:bg-opacity-90' : 'bg-transparent'
+      )}
+    >
+      <motion.div
+        className={`flex w-full justify-between ${isOpen ? 'items-start' : 'items-center'}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex-row space-x-3">
+          <div className="mt-1 flex items-center justify-center gap-2">
             <Link href="/" passHref>
-              <h2 className="font-sora flex-grow whitespace-nowrap text-black dark:text-white text-lg font-medium lg:text-xl">zeddin</h2>
+              <h2 className="font-sora flex-grow whitespace-nowrap text-black dark:text-white text-lg font-medium lg:text-xl">.zeddin</h2>
             </Link>
-            <Tooltip title="Verified">
+            <TooltipVerified title="Verified">
               <VerifiedIcon size={18} className="text-blue-400" />
-            </Tooltip>
+            </TooltipVerified>
           </div>
         </div>
         {isMobile && (
-          <div
-            className={clsx(
-              'mt-2 flex items-center gap-5 lg:hidden',
-              isOpen && 'h-[120px] flex-col-reverse !items-end justify-between pb-1'
-            )}
-          >
-            <ModeToggle />
+          <div className={clsx(
+            'mt-1 flex items-center gap-5 lg:hidden',
+            isOpen && 'flex-row !items-end justify-between'
+          )}>
             <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
+            <ModeToggle />
           </div>
         )}
-      </div>
-      {isMobile && <AnimatePresence>{isOpen && <MobileMenu />}</AnimatePresence>}
+      </motion.div>
+      {isMobile && (
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              <motion.div
+                className="fixed inset-0 bg-black/50 dark:backdrop-blur-sm bg-opacity-65 z-50"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={toggleMenu} // Close the menu when clicking outside of it
+              />
+              <motion.div
+                className="fixed top-0 right-0 max-w-xs w-full h-full bg-white dark:bg-black shadow-lg z-50"
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                variants={menuVariants}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="flex justify-end items-center p-4 pr-[15px] md:pr-[80px] -mb-[16px]">
+                  <MobileMenuButton expandMenu={isOpen} setExpandMenu={toggleMenu} />
+                </div>
+                <MobileMenu />
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      )}
     </div>
-  )
+  );
 }

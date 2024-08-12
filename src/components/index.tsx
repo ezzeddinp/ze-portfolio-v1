@@ -1,1 +1,1 @@
-export { default as EducationSectionComponent } from "./edu/EducationSectionComponent";
+export { default as EducationSectionComponent } from '@/app/edu/educationCard/EducationSectionComponent'

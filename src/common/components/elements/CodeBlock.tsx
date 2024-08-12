@@ -1,10 +1,8 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-
 import { useEffect, useState } from 'react'
 import { HiCheckCircle as CheckIcon, HiOutlineClipboardCopy as CopyIcon } from 'react-icons/hi'
-import { CodeProps } from 'react-markdown/lib/ast-to-react'
 import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter'
 import css from 'react-syntax-highlighter/dist/cjs/languages/prism/css'
 import diff from 'react-syntax-highlighter/dist/cjs/languages/prism/diff'
@@ -28,7 +26,15 @@ SyntaxHighlighter.registerLanguage(languages.diff, diff)
 SyntaxHighlighter.registerLanguage(languages.tsx, tsx)
 SyntaxHighlighter.registerLanguage(languages.css, css)
 
-const CodeBlock = ({ className = '', children, inline, ...props }: CodeProps) => {
+// Define the custom type for CodeBlock props
+type CodeBlockProps = {
+  className?: string;
+  children?: React.ReactNode;
+  inline?: boolean;
+  [key: string]: any; // This allows for additional props that might be passed
+}
+
+const CodeBlock = ({ className = '', children, inline, ...props }: CodeBlockProps) => {
   const [isCopied, setIsCopied] = useState<boolean>(false)
   
   const [value, copy] = useCopyToClipboard()
@@ -57,7 +63,7 @@ const CodeBlock = ({ className = '', children, inline, ...props }: CodeProps) =>
             className="absolute right-3 top-3 rounded-lg border border-neutral-700 p-2 hover:bg-neutral-800"
             type="button"
             aria-label="Copy to Clipboard"
-            onClick={() => handleCopy(children.toString())}
+            onClick={() => handleCopy(children?.toString() || '')}
             data-umami-event="Click Copy Code"
           >
             {!isCopied ? (

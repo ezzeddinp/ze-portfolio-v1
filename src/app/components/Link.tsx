@@ -1,12 +1,31 @@
 import React from "react";
 
 // Props
+interface Themes {
+  base: string[];
+  alt: string[];
+}
+
+const themes: Themes = {
+  base: ["text-zinc-900", "dark:text-zinc-100"],
+  alt: ["text-red-600", "dark:text-red-400"],
+};
+
 export interface Props {
   target: "_blank" | "_self" | "_parent" | "_top";
   text: string;
   url?: string;
   size?: string;
-  theme?: string;
+  theme?: keyof Themes;
+  flip?: boolean;
+}
+
+export interface Props {
+  target: "_blank" | "_self" | "_parent" | "_top";
+  text: string;
+  url?: string;
+  size?: string;
+  theme?: keyof typeof themes; // Change the type of theme to keyof typeof themes
   flip?: boolean;
 }
 

@@ -8,6 +8,9 @@ export const SKILLS = [
     'Java',
     'Github',
     'MySQL',
-    'Supabase'
+    'Supabase',
+    'MongoDB',
+    "Prisma",
+    "Expo"
   ];
   

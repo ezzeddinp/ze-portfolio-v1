@@ -30,8 +30,7 @@ export default function Blog() {
   const blogs = useMemo(() => {
     return data?.filter((blog: BlogItem) => blog.collection_id === null) || [];
   }, [data]);
-  
-  // UseEffect untuk memperbarui filteredBlogs setiap kali searchTerm atau blogs berubah
+
   useEffect(() => {
     const searchTermLower = searchTerm.toLowerCase();
     const filtered = blogs.filter((blog: BlogItem) => 
@@ -56,7 +55,7 @@ export default function Blog() {
     );
   }
 
-  if (blogs.length === 0 && !isLoading) {
+  if (blogs.length === 0) {
     return <EmptyState message="No Data" />;
   }
 

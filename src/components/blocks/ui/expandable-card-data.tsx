@@ -28,7 +28,7 @@ export const cards = [
   {
     description: "A web application for managing music events",
     title: "Music Event Manager",
-    src: "https://assets.aceternity.com/demos/lana-del-rey.jpeg",
+    src: "/IMG_4904.jpg",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/music-event-manager",
     content: () => {
@@ -46,7 +46,7 @@ export const cards = [
   {
     description: "A mobile app for real-time public transport tracking",
     title: "Transit Tracker",
-    src: "https://assets.aceternity.com/demos/babbu-maan.jpeg",
+    src: "/2.gif",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/transit-tracker",
     content: () => {
@@ -64,7 +64,7 @@ export const cards = [
   {
     description: "A data visualization tool for financial analytics",
     title: "FinViz",
-    src: "https://assets.aceternity.com/demos/led-zeppelin.jpeg",
+    src: "/pin1.jpg",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/finviz",
     content: () => {
@@ -82,7 +82,7 @@ export const cards = [
   {
     description: "An AI-powered chatbot for customer support",
     title: "SupportBot",
-    src: "https://assets.aceternity.com/demos/toh-phir-aao.jpeg",
+    src: "/IMG_4900.jpg",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/supportbot",
     content: () => {

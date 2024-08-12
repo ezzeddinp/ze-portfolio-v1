@@ -1,25 +1,19 @@
 import {
   BiEditAlt as BlogIcon,
-  BiPaperPlane as ContactIcon,
-  BiCategoryAlt as DashboardIcon,
+  // BiPaperPlane as ContactIcon,
   BiHomeSmile as HomeIcon,
-  BiBookBookmark as LearnIcon,
-  BiLeaf as ProfileIcon,
+  // BiBookBookmark as LearnIcon,
   BiArchive as ProjectIcon,
-  BiAt as ThreadsIcon
 } from 'react-icons/bi'
 import {
   BsDiscord as DiscordIcon,
   BsGithub as GithubIcon,
   BsInstagram as InstagramIcon,
   BsLinkedin as LinkedinIcon,
-  BsTiktok as TiktokIcon,
-  BsTwitter as TwitterIcon,
-  BsYoutube as YoutubeIcon
 } from 'react-icons/bs'
-import { LuTrello, LuWorkflow } from 'react-icons/lu'
-import { PiChatTeardropDotsBold as ChatIcon } from 'react-icons/pi'
-import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
+// import { LuTrello, LuWorkflow } from 'react-icons/lu'
+// import { PiChatTeardropDotsBold as ChatIcon } from 'react-icons/pi'
+// import { RiNpmjsFill as NpmIcon } from 'react-icons/ri'
 
 import { MenuItemProps } from '@/types/menu'
 

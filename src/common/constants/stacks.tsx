@@ -4,13 +4,14 @@ import {
   SiExpo,
   SiGithub,
   SiJavascript,
-  SiMysql,
   SiNextdotjs,
   SiNodedotjs,
   SiReact,
   SiSupabase,
   SiTailwindcss,
-  SiTypescript
+  SiTypescript,
+  SiPrisma,
+  SiMongodb
 
 } from 'react-icons/si';
 
@@ -31,5 +32,9 @@ export const STACKS: stacksProps = {
   Github: <SiGithub size={iconSize} className="text-black dark:text-white" />,
   Java: <FaJava size={iconSize} className='dark:text-white text-orange-800' />,
   MySQL: <GrMysql size={iconSize} className=' text-blue-600' />,
-  Supabase: <SiSupabase size={iconSize} className="text-green-600" />
+  Supabase: <SiSupabase size={iconSize} className="text-green-600" />,
+  MongoDB: <SiMongodb size={iconSize} className="text-green-600" />,
+  Prisma: <SiPrisma size={iconSize} className="text-black dark:text-white" />,
+  Expo: <SiExpo size={iconSize} className="text-black dark:text-white" />,
+
 };

@@ -118,7 +118,7 @@ export function ExpandableCardCardDemo() {
       </AnimatePresence>
 
       {/* Cards */}
-      <ul className="max-w-sm md:max-w-2xl lg:max-w-2xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 lg:pt-40">
+      <ul className="max-w-sm md:max-w-2xl lg:max-w-2xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 lg:pt-40 pb-40">
         {cards.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}

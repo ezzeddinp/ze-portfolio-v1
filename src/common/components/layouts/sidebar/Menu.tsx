@@ -22,10 +22,10 @@ export default function Menu({ title, list }: MenuProps) {
         </div>
       )}
       {list?.map((item: MenuItemProps, index: number) =>
-        <>
+        <div key={index}>
           <MenuItem key={index} {...item} className='items-center' />
           <Breakline />
-        </>
+        </div>
       )}
     </div>
   )

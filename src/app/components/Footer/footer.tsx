@@ -17,7 +17,7 @@ export default function footer() {
     }
 
     return (
-        <section className="shadow-inner py-[20px] lg:px-[80px] px-[20px]">
+        <section className="shadow-inner py-[20px] lg:px-[80px] px-[20px] pt-[50px]">
             <div className="flex lg:flex-row flex-row justify-between items-center lg:px-5 px-2 ">
                 {/* <SectionHeading
         className="text-3xl font-bold items-center justify-center"

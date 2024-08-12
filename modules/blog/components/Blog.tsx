@@ -4,7 +4,7 @@ import { fetcher } from '../../../services/fetcher';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import useSWR from 'swr';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import EmptyState from '@/common/components/elements/EmptyState';
 import LoadingCard from '@/common/components/elements/LoadingCard';
@@ -27,8 +27,10 @@ export default function Blog() {
     revalidateOnMount: true,
   });
 
-  const blogs: BlogItem[] = data?.filter((blog: BlogItem) => blog.collection_id === null) || [];
-
+  const blogs = useMemo(() => {
+    return data?.filter((blog: BlogItem) => blog.collection_id === null) || [];
+  }, [data]);
+  
   // UseEffect untuk memperbarui filteredBlogs setiap kali searchTerm atau blogs berubah
   useEffect(() => {
     const searchTermLower = searchTerm.toLowerCase();

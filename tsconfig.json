@@ -40,8 +40,7 @@
     "src/app/edu/page.tsx" // Ensure this path is necessary and correct
   ],
   "exclude": [
-    "node_modules",
-    ".next",
-    "build"
+    "node_modules/**",
+    ".next/**",
   ]
 }

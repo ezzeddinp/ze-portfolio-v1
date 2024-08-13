@@ -56,7 +56,7 @@ const CardDetail: React.FC = () => {
               objectPosition: 'center top',
             }}
           />
-          <motion.div className='flex flex-col justify-center items-center md:px-36 lg:px-60'>
+          <motion.div className='flex flex-col justify-center items-center lg:items-start px-2 sm:px-36 md:px-36 lg:px-60'>
             <div className='text-left pt-4'>
               <h3 className='text-black dark:text-white font-extrabold text-xl'>{card.title}</h3>
               <p className='text-neutral-500 dark:text-neutral-500 font-normal text-md'>{card.description}</p>

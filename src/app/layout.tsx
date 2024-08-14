@@ -5,6 +5,7 @@ import { ThemeProvider } from './components/theme-provider';
 import Layouts from '@/common/components/layouts/index';
 import GradientMain from '@/components/ui/gradient/page';
 const inter = Inter({ subsets: ['latin'] });
+import { Suspense } from 'react';
 
 export const metadata = {
   title: "zeddin's portfolio",
@@ -29,9 +30,11 @@ export default function RootLayout({
               className={`z-20 relative min-h-screen mx-auto max-w-full bg-gradient-to-b from-white via-gray-100 to-gray-50 dark:bg-gradient-to-b/60 dark:from-black/60 dark:via-black/60 dark:to-zinc-950/60 transition duration-500 w-full overflow-x-hidden`}
             >
               <NavbarMain className='z-50' />
+              <Suspense>
                 <Layouts>
                   {children}
                 </Layouts>
+              </Suspense>
             </div>
           </ThemeProvider>
         </GradientMain>

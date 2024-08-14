@@ -114,7 +114,7 @@ export const SOCIAL_MEDIA: MenuItemProps[] = [
   },
   // {
   //   title: 'NPM',
-  //   href: 'https://www.npmjs.com/~Code Bayu-setiawan',
+  //   href: 'https://www.npmjs.com/~Zeddin',
   //   icon: <NpmIcon size={iconSize} />,
   //   isShow: true,
   //   isExternal: true,

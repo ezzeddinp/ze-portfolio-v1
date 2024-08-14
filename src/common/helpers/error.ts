@@ -1,4 +1,4 @@
-import { reportErrorService } from '../../../services/error'
+
 
 type ErrorWithMessage = {
   message: string
@@ -21,9 +21,4 @@ function toErrorWithMessage(maybeError: unknown): ErrorWithMessage {
   } catch {
     return new Error(String(maybeError))
   }
-}
-
-export async function reportError(error: unknown) {
-  const message = toErrorWithMessage(error).message
-  await reportErrorService(message)
 }

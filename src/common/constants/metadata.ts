@@ -1,6 +1,6 @@
 export const METADATA = {
   creator: 'zeddin',
-  description: 'Personal website, portfolio, blog, software engineer roadmap, programming tips of Code Bayu',
+  description: 'Personal website, portfolio, blog, software engineer roadmap, programming tips of Code Zeddin',
   keyword: 'zeddin, zeddin, programming tips, belajar javascript, belajar typescript',
   authors: {
     name: 'zeddin',

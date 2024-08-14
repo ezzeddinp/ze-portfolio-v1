@@ -38,7 +38,7 @@ export default function Layouts({ children }: LayoutsProps) {
           </div>
         )}
         {/* Main content area */}
-        <main className="flex-1 overflow-y-auto pt-[70px]"> {/* Add padding top to accommodate the fixed header */}
+        <main className="flex-1 flex flex-col items-center justify-center overflow-y-auto pt-[70px]"> {/* Add padding top to accommodate the fixed header */}
           {children}
         </main>
       </div>

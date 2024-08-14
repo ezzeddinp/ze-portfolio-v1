@@ -39,7 +39,7 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   const pageViewCount = await getBlogViews(searchParams.id as string)
   const comments = await getComments(searchParams.id as string)
   return (
-    <Layouts className='lg:flex lg:flex-col items-center justify-center px-4'>
+    <Layouts className='lg:flex lg:flex-col'>
       <Container data-aos="fade-left">
         <BackButton url="/blog" />
         <ReaderPage content={blog} pageViewCount={pageViewCount} comments={comments} />

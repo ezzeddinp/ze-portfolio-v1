@@ -11,7 +11,7 @@ const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr:
 
 interface LayoutsProps {
   children: ReactNode;
-  className: string;
+  className?: string;
 }
 
 export default function Layouts({ children, className }: LayoutsProps) {

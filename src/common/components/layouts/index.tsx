@@ -11,10 +11,9 @@ const Notif = dynamic(() => import('@/common/components/elements/Notif'), { ssr:
 
 interface LayoutsProps {
   children: ReactNode;
-  className?: string;
 }
 
-export default function Layouts({ children, className }: LayoutsProps) {
+export default function Layouts({ children }: LayoutsProps) {
   const pathName = usePathname();
   const searchParams = useSearchParams();
   const readMode = searchParams.get('read-mode');
@@ -39,7 +38,7 @@ export default function Layouts({ children, className }: LayoutsProps) {
           </div>
         )}
         {/* Main content area */}
-        <main className={`flex-1 items-center justify-center overflow-y-auto pt-[70px] ${className}`}> {/* Add padding top to accommodate the fixed header */}
+        <main className="flex-1 overflow-y-auto pt-[70px]"> {/* Add padding top to accommodate the fixed header */}
           {children}
         </main>
       </div>

@@ -28,7 +28,7 @@ export const cards = [
   {
     description: "A web application for managing music events",
     title: "Music Event Manager",
-    src: "/IMG_4904.jpg",
+    src: "/infotag.jpg",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/music-event-manager",
     content: () => {
@@ -46,7 +46,7 @@ export const cards = [
   {
     description: "A mobile app for real-time public transport tracking",
     title: "Transit Tracker",
-    src: "/2.gif",
+    src: "/disto.jpg",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/transit-tracker",
     content: () => {
@@ -82,7 +82,7 @@ export const cards = [
   {
     description: "An AI-powered chatbot for customer support",
     title: "SupportBot",
-    src: "/IMG_4900.jpg",
+    src: "/distorsi.jpg",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/supportbot",
     content: () => {

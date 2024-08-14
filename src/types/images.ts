@@ -36,7 +36,7 @@ export const images: ImageData[] = [
         link: "https://github.com/ezzeddinp/notes-app-homepage"
     },
     {
-        src: "/IMG_4901.jpg",
+        src: "/distorsi.jpg",
         width: 300,
         height: 300,
         alt: "image",

@@ -7,6 +7,7 @@ import BackButton from '@/common/components/elements/BackButton'
 import Container from '@/common/components/elements/Container'
 import ReaderPage from '@/common/components/elements/ReaderPage'
 import { METADATA } from '@/common/constants/metadata'
+import Layouts from '@/common/components/layouts'
 
 type Props = {
   params: { content: string }
@@ -39,10 +40,12 @@ export default async function BlogDetailPage({ params, searchParams }: Props) {
   const comments = await getComments(searchParams.id as string)
   return (
     <>
+    <Layouts className='flex flex-col items-center justify-center'>
       <Container data-aos="fade-left">
         <BackButton url="/blog" />
         <ReaderPage content={blog} pageViewCount={pageViewCount} comments={comments} />
       </Container>
+    </Layouts>
     </>
   )
 }

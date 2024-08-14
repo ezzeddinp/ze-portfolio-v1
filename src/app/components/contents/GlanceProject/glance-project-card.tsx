@@ -140,7 +140,7 @@ export default function GlanceProject() {
 
       <div className="grid lg:max-h-[550px] max-h-[550px] grid-cols-8 grid-rows-6 lg:grid-rows-4 py-4 px-2 lg:px-40 gap-2 sm:gap-2">
         <ProjectItem
-          src="/IMG_4899.jpg"
+          src="/distorsi.jpg"
           alt="Project 1"
           title="Title 1"
           description="Description"
@@ -166,7 +166,7 @@ export default function GlanceProject() {
         />
 
         <ProjectItem
-          src="/IMG_4901.jpg"
+          src="/disto.jpg"
           alt="Project 4"
           title="Title 3"
           description="Description"

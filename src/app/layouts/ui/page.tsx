@@ -9,7 +9,6 @@ const CardDetail = dynamic(() => import('@/app/components/detail-project/page'),
 const MainCardDetail: React.FC = () => {
   return (
     <div>
-      {/* Your other page content */}
       <CardDetail />
     </div>
   );

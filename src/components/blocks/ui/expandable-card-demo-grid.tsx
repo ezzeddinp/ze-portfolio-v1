@@ -126,7 +126,7 @@ export function ExpandableCardCardDemo() {
               layoutId={`card-${card.title}-${id}`}
               key={`card-${card.title}-${id}`}
               onClick={() => router.push(`/experience-detail/${card.title}`)}
-              className="snap-center lg:snap-none drop-shadow-xl p-2 pb-6 md:pb-0 lg:pb-2 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-black/20 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
+              className="snap-center lg:snap-none drop-shadow-xl p-2 pb-6 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
             >
               <div className="flex gap-2 md:gap-4 lg:gap-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
                 <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -135,7 +135,7 @@ export function ExpandableCardCardDemo() {
                     height={200}
                     src={card.src}
                     alt={card.title}
-                    className="h-[270px] md:w-40 md:h-40 lg:h-40 lg:w-72 rounded-[3px] object-cover object-top"
+                    className="h-[190px] md:h-40 lg:h-40 lg:w-72 rounded-sm object-cover object-center shadow-md"
                   />
                 </motion.div>
                 <motion.div className="flex flex-col md:flex-row lg:flex-row items-start md:items-center lg:items-center justify-between gap-2 md:w-[520px] lg:w-[650px]">

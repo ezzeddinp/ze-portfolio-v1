@@ -22,26 +22,32 @@ export const cards = [
     },
     role: "Full Stack Developer",
     collaborators: "-",
-    duration: "Aug 2023 - Dec 2023",
-    tools: "MongoDB, cms, Next.js, Typescript, TailwindCSS, Stripe, Prisma(ORM), Zustand",
+    duration: "July 2023 - Sept 2023",
+    tools: "MongoDB, cms, Nextjs, Typescript, TailwindCSS, Stripe, Prisma(ORM), Zustand",
   },
   {
-    description: "A web application for managing music events",
-    title: "Music Event Manager",
-    src: "/infotag.jpg",
+    description: "A web application for manage tasks",
+    title: "Productivity Web UI",
+    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723963518/Black_White_Minimalist_Elegant_Photographer_Portofolio_Presentation_qinb5x.png",
+    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_180548_d5nwnx.png",
+    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181210_zva3nl.png",
+    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181850_z32oai.png",
+    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181149_vhblaj.png",
+    
     ctaText: <SiGithub size={20} />,
-    ctaLink: "https://github.com/user/music-event-manager",
+    ctaLink: "https://github.com/ezzeddinp/swift-launch-web-ui",
+    ctaDescriptionLink: "Swift Launch",
     content: () => {
       return (
         <p>
-          The Music Event Manager is a comprehensive web application designed to help organizers manage music events efficiently. It includes features such as ticket sales, event scheduling, and performer management.
+          <i>Swift Launch</i> is a web application that allows users to manage their tasks also share, calculate and share common links.
         </p>
       );
     },
-    role: "Frontend Developer",
-    collaborators: "John Doe, Jane Smith",
-    duration: "Jan 2021 - Jun 2021",
-    tools: "React, Redux, Tailwind CSS",
+    role: "Frontend",
+    collaborators: "-",
+    duration: "Aug 2024",
+    tools: "Nextjs, Typescript, TailwindCSS",
   },
   {
     description: "A mobile app for real-time public transport tracking",

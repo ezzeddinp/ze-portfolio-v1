@@ -118,52 +118,68 @@ export function ExpandableCardCardDemo() {
       </AnimatePresence>
 
       {/* Cards */}
-        <ul
-          className="scrollbar-hide max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 py-20 lg:py-32"
-        >
-          {cards.map((card) => (
-            <motion.div
-              layoutId={`card-${card.title}-${id}`}
-              key={`card-${card.title}-${id}`}
-              onClick={() => router.push(`/experience-detail/${card.title}`)}
-              className="snap-center lg:snap-none drop-shadow-xl p-2 pb-6 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
-            >
-              <div className="flex gap-2 md:gap-4 lg:gap-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
-                <motion.div layoutId={`image-${card.title}-${id}`}>
-                  <Image
-                    width={390}
-                    height={200}
-                    src={card.src}
-                    alt={card.title}
-                    className="h-[190px] md:h-40 lg:h-40 lg:w-72 rounded-sm object-cover object-center shadow-md"
-                  />
-                </motion.div>
-                <motion.div className="flex flex-col md:flex-row lg:flex-row items-start md:items-center lg:items-center justify-between gap-2 md:w-[520px] lg:w-[650px]">
-                  <div className="text-left md:items-end md:justify-end lg:items-center lg:justify-center">
-                    <motion.h3
-                      layoutId={`title-${card.title}-${id}`}
-                      className="font-medium text-neutral-800 dark:text-neutral-200 lg:text-left md:text-left pt-2"
-                    >
-                      {card.title}
-                    </motion.h3>
-                    <motion.p
-                      layoutId={`description-${card.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 md:text-left text-sm lg:text-md w-full h-full flex-wrap"
-                    >
-                      {card.description}
-                    </motion.p>
+      <ul
+        className="scrollbar-hide max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 py-20 lg:py-32"
+      >
+        {cards.map((card) => (
+          <motion.div
+            layoutId={`card-${card.title}-${id}`}
+            key={`card-${card.title}-${id}`}
+            onClick={() => router.push(`/experience-detail/${card.title}`)}
+            className="snap-center lg:snap-none drop-shadow-xl p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
+          >
+            <div className=" flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
+              <motion.div layoutId={`image-${card.title}-${id}`}>
+                <Image
+                  width={390}
+                  height={200}
+                  src={card.src}
+                  alt={card.title}
+                  className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
+                />
+              </motion.div>
+              <motion.div className="flex flex-col md:flex-col lg:flex-col items-start md:items-start lg:items-start lg:gap-2 justify-between gap-2 md:w-[520px] lg:w-[650px] flex-grow">
+                <div className="flex flex-col text-left md:items-start md:justify-end lg:items-start lg:justify-start">
+                  <motion.h3
+                    layoutId={`title-${card.title}-${id}`}
+                    className="font-bold text-neutral-800 dark:text-neutral-200 lg:text-left md:text-left pt-2"
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p
+                    layoutId={`description-${card.description}-${id}`}
+                    className="text-neutral-600 dark:text-neutral-400 md:text-left text-sm lg:text-md w-full h-full flex-wrap"
+                  >
+                    {card.description}
+                  </motion.p>
+                </div>
+                <div className="flex flex-col gap-2 pt-4">
+                  <div className="flex flex-wrap gap-2">
+                    {card.tools && card.tools.split(',').map((tool, index) => (
+                      <span
+                        key={index}
+                        className="bg-gray-200 dark:bg-white/10 text-gray-800 dark:text-gray-100 px-3 py-2 lg:py-1 rounded-md text-xs font-medium dark:font-semibold"
+                      >
+                        {tool.trim()}
+                      </span>
+                    ))}
                   </div>
+                  <div className="flex items-start justify-start">
                   <motion.button
                     layoutId={`button-${card.title}-${id}`}
-                    className="px-4 py-2 text-sm rounded-full font-bold bg-gray-100 hover:bg-green-500 hover:text-white text-black mt-4 md:mt-0"
-                  >
+                    className="w-fit py-2 px-4 text-sm rounded-full font-bold bg-black text-white hover:bg-black/80 dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 hover:duration-200"
+                    onClick={() => window.open(card.ctaLink, '_blank')}
+                    >
                     {card.ctaText}
                   </motion.button>
-                </motion.div>
-              </div>
-            </motion.div>
-          ))}
-        </ul>
+                    </div>
+                </div>
+
+              </motion.div>
+            </div>
+          </motion.div>
+        ))}
+      </ul>
 
     </>
   );

@@ -23,7 +23,7 @@ export const cards = [
     role: "Full Stack Developer",
     collaborators: "-",
     duration: "July 2023 - Sept 2023",
-    tools: "MongoDB, cms, Nextjs, Typescript, TailwindCSS, Stripe, Prisma(ORM), Zustand",
+    tools: "MongoDB, CMS, Nextjs, Typescript, TailwindCSS, Stripe, Prisma",
   },
   {
     description: "A web application for manage tasks",

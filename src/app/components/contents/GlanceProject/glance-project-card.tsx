@@ -102,7 +102,7 @@ function ProjectItem({ src, alt, title, description, link, gridProps }: {
         height={300}
         alt={alt}
       />
-      <div className="absolute bottom-0 left-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
+      <div className="absolute bottom-0 left-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
         {link ? (
           <Link target="_blank" href={link}>
             <div className='flex flex-row items-center justify-center gap-2'>
@@ -138,7 +138,7 @@ export default function GlanceProject() {
         </div>
       </Container>
 
-      <div className="grid lg:max-h-[550px] max-h-[550px] grid-cols-8 grid-rows-6 lg:grid-rows-4 py-4 px-2 lg:px-40 gap-2 sm:gap-2">
+      <div className=" text-left grid lg:max-h-[550px] max-h-[550px] grid-cols-8 grid-rows-6 lg:grid-rows-4 py-4 px-2 lg:px-40 gap-2 sm:gap-2">
         <ProjectItem
           src="/distorsi.jpg"
           alt="Project 1"

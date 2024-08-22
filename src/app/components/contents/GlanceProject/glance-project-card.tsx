@@ -73,6 +73,11 @@ function ProjectItem({ src, alt, title, description, link, gridProps }: {
   description: string,
   link?: string,
   gridProps: string
+  priority?: boolean; // Add this line
+  quality?: number; // Add this line
+  blurDataURL?: string; // Add this line
+  placeholder?: string; // Add this line
+  loading?: string; // Add this line
 }) {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const controls = useAnimation();
@@ -95,7 +100,7 @@ function ProjectItem({ src, alt, title, description, link, gridProps }: {
     >
       <Image
         className="h-full w-full object-cover shadow-xl sm:rounded-[3px] transition duration-500 group-hover:scale-105 group-hover:brightness-[.2]"
-        loading="eager"
+        loading="lazy"
         sizes="(min-width: 768px) 25vw, 50vw"
         src={src}
         width={300}
@@ -142,16 +147,26 @@ export default function GlanceProject() {
         <ProjectItem
           src="/distorsi.jpg"
           alt="Project 1"
-          title="Title 1"
-          description="Description"
+          title="Soon"
+          priority={false}
+          quality={75}
+          placeholder="blur"
+            blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
+          loading="lazy"
+          description="-"
           gridProps="col-span-4 row-span-2 md:col-span-2 lg:p-0"
         />
 
         <ProjectItem
           src="/forumchat.png"
           alt="Project 2"
-          title="Simple Forum Chat"
-          description="Description"
+          title="Forum Chat"
+          priority={false}
+          quality={75}
+          placeholder="blur"
+            blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
+          loading="lazy"
+          description="Simple forum chat where users can chat globally"
           link="https://chat-delta-ruby-13.vercel.app/"
           gridProps="col-span-4 row-span-2 md:col-span-2 lg:p-0"
         />
@@ -160,6 +175,11 @@ export default function GlanceProject() {
           src="/ribet.jpg"
           alt="Project 3"
           title="Notes App"
+          priority={false}
+          quality={75}
+          placeholder="blur"
+            blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
+          loading="lazy"
           description="Build with React Native"
           link="https://github.com/ezzeddinp/notes-app-homepage"
           gridProps="col-span-4 row-span-4 lg:p-0"
@@ -168,8 +188,13 @@ export default function GlanceProject() {
         <ProjectItem
           src="/disto.jpg"
           alt="Project 4"
-          title="Title 3"
-          description="Description"
+          title="Soon"
+          priority={false}
+          quality={75}
+          placeholder="blur"
+            blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
+          loading="lazy"
+          description="-"
           gridProps="col-span-4 row-span-4 md:row-span-2 md:row-start-3 lg:p-0"
         />
       </div>

@@ -52,7 +52,8 @@ const CardDetail: React.FC = () => {
               alt={card.title}
               width={500}
               height={500}
-              className='h-[270px] md:h-[353px] md:w-[700px] lg:h-[400px] lg:w-[700px] rounded-sm items-center'
+              loading="eager"
+              className='h-[270px] md:h-[353px] md:w-[700px] lg:h-[300px] lg:w-[600px] rounded-sm items-center'
               style={{
                 objectFit: 'cover',
                 objectPosition: 'center top',
@@ -112,9 +113,10 @@ const CardDetail: React.FC = () => {
                     key={index}
                     src={url}
                     alt={`${card.title} image ${index + 1}`}
+                    loading="eager"
                     width={390}
                     height={200}
-                    className='h-[190px] lg:h-[400px] lg:w-[700px] rounded-sm'
+                    className='h-[190px] lg:h-[300px] lg:w-[600px] rounded-sm'
                     style={{
                       objectFit: 'cover',
                       objectPosition: 'center top',

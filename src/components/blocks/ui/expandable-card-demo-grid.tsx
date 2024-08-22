@@ -135,6 +135,11 @@ export function ExpandableCardCardDemo() {
                   height={200}
                   src={card.src}
                   alt={card.title}
+                  priority={false}
+                  quality={75}
+                  placeholder="blur"
+                    blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
+                  loading="lazy"
                   className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
                 />
               </motion.div>

@@ -1,3 +1,3 @@
-import ExperienceDetail from './components/ExperienceDetail'
+// import ExperienceDetail from './components/ExperienceDetail'
 
-export default ExperienceDetail
+// export default ExperienceDetail

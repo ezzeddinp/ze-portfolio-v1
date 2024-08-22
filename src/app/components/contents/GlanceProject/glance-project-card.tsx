@@ -70,7 +70,19 @@ const ProjectItem: React.FC<{
   blurDataURL?: string;
   placeholder?: "blur" | "empty";
   loading?: "lazy" | "eager";
-}> = ({ src, alt, title, description, link, gridProps, priority = false, quality = 75, blurDataURL, placeholder = "blur", loading = "lazy" }) => {
+}> = ({
+  src,
+  alt,
+  title,
+  description,
+  link,
+  gridProps,
+  priority = false,
+  quality = 75,
+  blurDataURL,
+  placeholder = "blur",
+  loading = "lazy"
+}) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
   const controls = useAnimation();
 
@@ -101,7 +113,7 @@ const ProjectItem: React.FC<{
       />
       <div className="absolute bottom-0 left-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-white">
         {link ? (
-          <Link href={link} target="_blank">
+          <Link href={link} target="_blank" rel="noopener noreferrer">
             <div className='flex flex-row items-center justify-center gap-2'>
               <h3 className="text-sm lg:text-lg font-bold">{title}</h3>
               {link.includes('github') ? <SiGithub size={20} /> : <BsLink45Deg size={20} />}

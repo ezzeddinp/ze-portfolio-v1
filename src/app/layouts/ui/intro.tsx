@@ -1,8 +1,13 @@
-import React from 'react'
-import IntroLogic from './intro-logic'
+// Import dynamic from Next.js to handle dynamic imports
+import dynamic from 'next/dynamic';
 
-export default function MainPage() {
+// Dynamically import the IntroLogic component and disable SSR
+const IntroLogic = dynamic(() => import('./intro-logic'), { ssr: false });
+
+export default function Page() {
   return (
-    <IntroLogic />
-  )
+    <div>
+      <IntroLogic />
+    </div>
+  );
 }

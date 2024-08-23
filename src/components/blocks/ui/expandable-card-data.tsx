@@ -4,11 +4,12 @@ export const cards = [
   {
     description: "A web marketplace for buying and selling digital products",
     title: "Web Marketplace",
-    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-home.png",
-    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-product.png",
-    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-cart.png",
-    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-checkout.png",
-    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-profile.png",
+    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379833/webMarketPLace/hero-section_egapra.png",
+    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724380165/sell-product1_uou5lz.png",
+    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379834/webMarketPLace/product-card_vqjoja.png",
+    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724380165/sell-product2_nahobe.png",
+    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379833/webMarketPLace/setting-section_umrvdf.png",
+    sixth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379834/webMarketPLace/product-card_vqjoja.png",
     ctaText: <SiGithub size={20} />,
     ctaLink: "https://github.com/user/web-marketplace",
     content: () => {

@@ -2,6 +2,34 @@ import { SiGithub } from "react-icons/si";
 
 export const cards = [
   {
+    description: "A web marketplace selling digital products",
+    title: "Web Marketplace",
+    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-home.png",
+    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-product.png",
+    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-cart.png",
+    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-checkout.png",
+    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-profile.png",
+    ctaText: <SiGithub size={20} />,
+    ctaLink: "https://github.com/user/web-marketplace",
+    content: () => {
+      return (
+        <p>
+        The Web Marketplace is an advanced online platform designed to facilitate the buying and selling of digital products. Built with a modern tech stack, this marketplace leverages <strong>Next.js</strong> for a seamless frontend experience, while <strong>Node.js</strong> handles backend operations. <strong>Zod</strong> is used for robust schema validation, ensuring data integrity throughout the application. 
+
+        <strong>Prisma</strong> manages database interactions, providing a flexible and efficient way to handle data. <strong>Supabase</strong> is integrated for real-time data and authentication, offering a secure and scalable backend solution. For file management, <strong>Uploadthing</strong> is utilized to handle uploads and storage efficiently. 
+
+        The platform uses <strong>Kinde</strong> for user authentication and management, enhancing security and user experience. Payments are processed through <strong>Stripe</strong>, ensuring a smooth and reliable transaction process. 
+
+        This project is designed to offer a user-friendly interface for browsing products, managing orders, and securely handling transactions. It supports various payment methods and includes features for effective user profile management.
+      </p>
+      );
+    },
+    role: "Full Stack Developer",
+    collaborators: "-",
+    duration: "August 2024 - Sept 2024",
+    tools: "NextJs, Node.js,Zod, Prisma, Supabase, Uploadthing, Kinde, Stripe",
+  },
+  {
     description: "Fullstack Project",
     title: "E-commerce Store",
     src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334003/ecommerce-store-highlight/apakek_bvxdig.png",
@@ -66,24 +94,6 @@ export const cards = [
     collaborators: "Alice Johnson, Bob Brown",
     duration: "Mar 2020 - Dec 2020",
     tools: "Node.js, Express, MongoDB",
-  },
-  {
-    description: "A data visualization tool for financial analytics",
-    title: "FinViz",
-    src: "/pin1.jpg",
-    ctaText: <SiGithub size={20} />,
-    ctaLink: "https://github.com/user/finviz",
-    content: () => {
-      return (
-        <p>
-          FinViz is a web-based data visualization tool designed for financial analysts. It offers various charts and graphs to help users understand financial data trends and make informed decisions.
-        </p>
-      );
-    },
-    role: "Data Scientist",
-    collaborators: "Eve Green, Frank Harris",
-    duration: "Jul 2018 - Dec 2018",
-    tools: "Python, D3.js, Pandas",
   },
   {
     description: "An AI-powered chatbot for customer support",

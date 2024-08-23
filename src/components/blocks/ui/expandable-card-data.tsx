@@ -2,7 +2,7 @@ import { SiGithub } from "react-icons/si";
 
 export const cards = [
   {
-    description: "A web marketplace selling digital products",
+    description: "A web marketplace for buying and selling digital products",
     title: "Web Marketplace",
     src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-home.png",
     second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/marketplace/marketplace-product.png",

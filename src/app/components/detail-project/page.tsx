@@ -64,7 +64,9 @@ const CardDetail: React.FC = () => {
                 <h3 className='text-black dark:text-white font-extrabold text-xl'>{card.title}</h3>
                 <p className='text-neutral-500 dark:text-neutral-500 font-normal text-md'>{card.description}</p>
                 <div className='text-left pt-4 lg:max-w-lg'>
-                  <p className='text-black dark:text-neutral-300 text-[15px] font-semibold '>{card.content()}</p>
+                  <p className='text-gray-800 dark:text-gray-200 text-base lg:text-lg leading-relaxed font-medium'>
+                    {card.content()}
+                  </p>
                 </div>
               </div>
               <motion.div>

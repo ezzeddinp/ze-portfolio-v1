@@ -38,7 +38,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/edu/page.tsx" // Ensure this path is necessary and correct
-  ],
+, "src/app/components/IdCard.jsx"  ],
   "exclude": [
     "node_modules/**",
     ".next/**",

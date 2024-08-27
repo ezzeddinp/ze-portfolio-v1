@@ -32,7 +32,7 @@ const nameVariants = {
 // Array of words to animate individually
 const wordsArray = ["Mohammad", "Ezzeddin", "Pratama"];
 
-function IntroLogic(): React.JSX.Element {
+function IntroLogic( {className}:{ className?: string } ): React.JSX.Element {
   const controls = useAnimation(); // Controls for framer-motion animation
   const [isLoading, setIsLoading] = useState<boolean>(true); // State to manage loading
 
@@ -57,7 +57,7 @@ function IntroLogic(): React.JSX.Element {
         initial={{ opacity: 0.6 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.05 }}
-        className="flex relative antialiased flex-col justify-start pt-10 pb-[115px] pl-10 pr-10 md:pt-20 md:pl-10 lg:pl-40"
+        className={`flex relative antialiased flex-col justify-start pt-10 pb-[115px] pl-10 pr-10 md:pt-20 md:pl-10 lg:pl-40 ${className}`}
       >
         <>
           <motion.h1

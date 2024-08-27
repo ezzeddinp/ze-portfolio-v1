@@ -90,9 +90,9 @@ function UnderDevelopmentPage(): JSX.Element {
           Under Development
         </h1>
         <p
-          className="text-sm text-black/80 dark:text-white/80 "
+          className="text-sm text-black/80 dark:text-white/80 tracking-tighter"
         >
-          Currently building exciting new features for education and awards. Stay tuned!
+          Currently developing for education and awards. Stay tuned!
         </p>
       </div>
     </div>

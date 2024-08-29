@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
-import { FiArrowLeftCircle as BackButtonIcon } from 'react-icons/fi'
+import { FiArrowLeft as BackButtonIcon } from 'react-icons/fi'
 
 type BackButtonProps = {
   url?: string
@@ -26,7 +26,7 @@ export default function BackButton({ url }: BackButtonProps) {
   const BackButtonChildComponent = () => {
     return (
       <>
-        <BackButtonIcon size={20} data-testid="back-icon" />
+        <BackButtonIcon size={18} data-testid="back-icon" />
         <span>Back</span>
       </>
     )

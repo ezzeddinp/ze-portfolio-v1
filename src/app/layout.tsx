@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} overflow-hidden dark:bg-black/5`}>
+      <body className={`${inter.className} overflow-hidden dark:bg-transparent`}>
       <Analytics />
       <SpeedInsights />
         <GradientMain>
@@ -33,6 +33,7 @@ export default function RootLayout({
           >
             <div
               className={`z-20 relative min-h-screen mx-auto max-w-full bg-gradient-to-b from-white via-gray-100 to-gray-50 dark:bg-gradient-to-b/60 dark:from-black/60 dark:via-black/60 dark:to-zinc-950/60 transition duration-500 w-full overflow-x-hidden`}
+              
             >
               <NavbarMain className='z-50' />
               <Suspense>

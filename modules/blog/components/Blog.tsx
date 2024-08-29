@@ -33,7 +33,7 @@ export default function Blog() {
 
   useEffect(() => {
     const searchTermLower = searchTerm.toLowerCase();
-    const filtered = blogs.filter((blog: BlogItem) => 
+    const filtered = blogs.filter((blog: BlogItem) =>
       blog.title.toLowerCase().includes(searchTermLower) ||
       blog.description.toLowerCase().includes(searchTermLower)
     );
@@ -65,7 +65,7 @@ export default function Blog() {
       <div
         className={clsx(
           'mt-6 gap-5 sm:gap-4',
-          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-2'
+          viewOption === 'list' || isMobile ? 'flex flex-col' : 'grid grid-cols-4'
         )}
       >
         <input
@@ -82,7 +82,7 @@ export default function Blog() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: index * 0.1 }}
           >
-            <BlogCard view={viewOption} {...item} />
+              <BlogCard view={viewOption} {...item} />
           </motion.div>
         ))}
       </div>

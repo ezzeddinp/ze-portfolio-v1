@@ -1,10 +1,8 @@
 "use client"
 
 import { usePathname, useRouter } from 'next/navigation'
-
 import { useEffect, useState } from 'react'
 import { TbMessage2 as CommentIcon } from 'react-icons/tb'
-
 import Card from '@/common/components/elements/Card'
 import Image from '@/common/components/elements/Image'
 import { PLACEHOLDER_URL } from '@/common/constants'
@@ -12,7 +10,6 @@ import { formatBlogSlug, formatDate } from '@/common/helpers'
 import clsxm from '@/common/libs/clsxm'
 import { sendDataLayer } from '@/common/libs/gtm'
 import { BlogItem } from '@/common/types/blog'
-
 import useIsMobile from '../../../hooks/useIsMobile'
 
 interface BlogCardProps extends BlogItem {
@@ -20,6 +17,7 @@ interface BlogCardProps extends BlogItem {
   isExcerpt?: boolean
   isCarousel?: boolean
 }
+
 
 export default function BlogCard({
   id,
@@ -45,7 +43,7 @@ export default function BlogCard({
   const trimmedContent = description.slice(0, 100) + (description.length > 100 ? '...' : '')
 
   const contentContainerClasses = clsxm(
-    'flex flex-col self-center w-full sm:w-4/5 flex-grow space-y-3 gap-[100px] px-5 sm:p-0 mb-5 sm:mb-0 ',
+    'flex flex-col p-2 self-center w-full sm:w-4/5 flex-grow space-y-3 gap-[100px] px-0 sm:p-0 mb-5 sm:mb-0 ',
     view === 'grid' ? 'sm:w-full sm:!p-6' : ''
   )
 
@@ -68,8 +66,8 @@ export default function BlogCard({
     <Card
       onClick={handleCardClick}
       className={clsxm(
-        ' flex w-full cursor-pointer items-center border border-neutral-600  dark:bg-black dark:border-zinc-500 sm:flex-row lg:hover:scale-[102%] md:hover:scale-[102%] hover:scale-[102%]',
-        viewOption === 'grid' ? 'w-full !flex-col sm:h-full' : '!flex-row sm:p-5 sm:px-6',
+        'flex w-full cursor-pointer items-center bg-neutral-50 hover:shadow-lg sm:flex-row lg:hover:scale-[102%] md:hover:scale-[102%] hover:scale-[102%]',
+        viewOption === 'grid' ? ' !col-span-1 sm:h-full' : '!flex-row sm:p-5 sm:px-6',
         isCarousel && 'min-w-[350px]',
         !isExcerpt && 'sm:h-[320px]'
       )}
@@ -81,8 +79,8 @@ export default function BlogCard({
           height={100}
           alt={title}
           className={clsxm(
-            'w-full h-full object-cover rounded-[3px] sm:h-[8.5rem] sm:rounded-xl',
-            viewOption === 'grid' ? '!h-48 !rounded-b-none !rounded-t-xl' : ''
+            'w-full h-full object-cover rounded-md sm:h-[8.5rem] sm:rounded-xl',
+            viewOption === 'grid' ? '!h-48 !rounded-b-none !rounded-t-xl shadow-inner' : ''
           )}
         />
       </div>

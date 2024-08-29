@@ -14,7 +14,7 @@ const Image = (props: ImageProps) => {
   const [isLoading, setLoading] = useState(true)
 
   return (
-    <div className={clsx('overflow-hidden', isLoading ? 'animate-pulse' : '', rounded)}>
+    <div className={clsx('overflow-hidden mb-0 p-2 md:mb-0 md:p-2 lg:mb-0 items-center lg:p-2', isLoading ? 'animate-pulse' : '', rounded)}>
       <NextImage
         data-testid="image"
         className={clsx(

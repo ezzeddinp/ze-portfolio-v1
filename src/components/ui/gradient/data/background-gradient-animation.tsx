@@ -17,25 +17,25 @@ interface BackgroundGradientAnimationProps {
   className?: string;
   interactive?: boolean;
   containerClassName?: string;
-  theme?: 'dark' | 'light';
+  theme?: "dark" | "light";
 }
 
 export const BackgroundGradientAnimation: React.FC<BackgroundGradientAnimationProps> = ({
-  gradientBackgroundStart = "rgb(0, 0, 0)", // Hitam di tengah
-  gradientBackgroundEnd = "rgb(255, 255, 255)", // Putih di ujung
-  firstColor = "0, 0, 0", // Hitam
-  secondColor = "0, 0, 50", // Biru sangat gelap
-  thirdColor = "0, 0, 100", // Biru gelap
-  fourthColor = "0, 0, 150", // Biru lebih terang
-  fifthColor = "0, 0, 200", // Biru cerah
-  pointerColor = "255, 255, 255", // Putih
-  size = "80%",
+  gradientBackgroundStart = "30, 10, 10", // Dark red
+  gradientBackgroundEnd = "60, 20, 20", // Darker red
+  firstColor = "90, 30, 30", // Darker red
+  secondColor = "165, 190, 255", // Medium dark red
+  thirdColor = "165, 190, 255", // Soft dark red
+  fourthColor = "180, 70, 70", // Mid red
+  fifthColor = "165, 190, 255", // Lighter red
+  pointerColor = "165, 190, 255", // Light red/white for pointer
+  size = "100%",
   blendingValue = "soft-light",
   children,
   className,
   interactive = true,
   containerClassName,
-  theme = 'dark', 
+  theme = "dark",
 }) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
@@ -45,22 +45,22 @@ export const BackgroundGradientAnimation: React.FC<BackgroundGradientAnimationPr
   const [tgY, setTgY] = useState(0);
 
   useEffect(() => {
-    const isLightTheme = theme === 'light';
+    const isLightTheme = theme === "light";
 
     document.body.style.setProperty(
       "--gradient-background-start",
-      isLightTheme ? "rgb(255, 255, 255)" : gradientBackgroundStart 
+      isLightTheme ? "rgb(0, 0, 0)" : gradientBackgroundStart
     );
     document.body.style.setProperty(
       "--gradient-background-end",
       isLightTheme ? "rgb(0, 0, 0)" : gradientBackgroundEnd
     );
-    document.body.style.setProperty("--first-color", isLightTheme ? "255, 255, 255" : firstColor);
-    document.body.style.setProperty("--second-color", isLightTheme ? "200, 200, 255" : secondColor);
-    document.body.style.setProperty("--third-color", isLightTheme ? "100, 149, 237" : thirdColor);
-    document.body.style.setProperty("--fourth-color", isLightTheme ? "0, 0, 205" : fourthColor);
-    document.body.style.setProperty("--fifth-color", isLightTheme ? "0, 0, 139" : fifthColor);
-    document.body.style.setProperty("--pointer-color", isLightTheme ? "255, 255, 255" : pointerColor);
+    document.body.style.setProperty("--first-color", isLightTheme ? "0, 0, 0" : firstColor);
+    document.body.style.setProperty("--second-color", isLightTheme ? "50, 50, 50" : secondColor);
+    document.body.style.setProperty("--third-color", isLightTheme ? "100, 100, 100" : thirdColor);
+    document.body.style.setProperty("--fourth-color", isLightTheme ? "150, 150, 150" : fourthColor);
+    document.body.style.setProperty("--fifth-color", isLightTheme ? "200, 200, 200" : fifthColor);
+    document.body.style.setProperty("--pointer-color", isLightTheme ? "200, 200, 200" : pointerColor);
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
   }, [
@@ -74,7 +74,7 @@ export const BackgroundGradientAnimation: React.FC<BackgroundGradientAnimationPr
     pointerColor,
     size,
     blendingValue,
-    theme
+    theme,
   ]);
 
   useEffect(() => {
@@ -84,9 +84,7 @@ export const BackgroundGradientAnimation: React.FC<BackgroundGradientAnimationPr
       }
       setCurX(curX + (tgX - curX) / 20);
       setCurY(curY + (tgY - curY) / 20);
-      interactiveRef.current.style.transform = `translate(${Math.round(
-        curX
-      )}px, ${Math.round(curY)}px)`;
+      interactiveRef.current.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
     }
 
     move();
@@ -115,28 +113,14 @@ export const BackgroundGradientAnimation: React.FC<BackgroundGradientAnimationPr
       <svg className="hidden">
         <defs>
           <filter id="blurMe">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation="10"
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-              result="goo"
-            />
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
             <feBlend in="SourceGraphic" in2="goo" />
           </filter>
         </defs>
       </svg>
       <div className={cn("", className)}>{children}</div>
-      <div
-        className={cn(
-          "gradients-container h-full w-full blur-lg",
-          isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]"
-        )}
-      >
+      <div className={cn("gradients-container h-full w-full blur-lg", isSafari ? "blur-2xl" : "[filter:url(#blurMe)_blur(40px)]")}>
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,_rgba(var(--first-color),_0.8)_0,_rgba(var(--first-color),_0)_50%)_no-repeat]`,

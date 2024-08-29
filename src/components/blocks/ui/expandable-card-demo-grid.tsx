@@ -4,13 +4,21 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "../../../../hooks/useOutsideClick";
 import { cards } from "./expandable-card-data";
-import { useRouter } from "next/navigation";
+import { notFound, useRouter } from "next/navigation";
+import supabase from "../../../../utils/supabase";
 
-export function ExpandableCardCardDemo() {
+import { SiGithub } from "react-icons/si";
+
+export const ctaTextLogo = {
+  github: <SiGithub size={20} />,
+}
+
+export async function ExpandableCardCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
   const router = useRouter();
+
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -28,12 +36,19 @@ export function ExpandableCardCardDemo() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
-
   useOutsideClick(ref, () => setActive(null));
+
+  const { data: project } = await supabase
+    .from('project')
+    .select('*')
+    .order("id");
+  if (!project) return notFound();
+  // console.log(project);
+
 
   return (
     <>
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -115,34 +130,32 @@ export function ExpandableCardCardDemo() {
             </motion.div>
           </div>
         ) : null}
-      </AnimatePresence>
+      </AnimatePresence> */}
 
       {/* Cards */}
-      <ul
-        className="scrollbar-hide max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 py-20 lg:py-32"
-      >
-        {cards.map((card) => (
+      <ul className="scrollbar-hide max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 py-20 lg:py-32">
+        {project.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => router.push(`/experience-detail/${card.title}`)}
-            className="snap-center lg:snap-none drop-shadow-xl p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
+            className="snap-center lg:snap-none shadow-md hover:shadow-lg hover:duration-500 p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50  dark:bg-black/20 dark:hover:bg-gradient-to-tl dark:hover:from-blue-900/15 lg:dark:hover:from-blue-900/30 dark:hover:via-blue-700/30 dark:hover:to-blue-900/10 dark:hover:scale-100 dark:hover:shadow-lg dark:hover:shadow-blue-700/80  transition-all duration-300  rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
           >
-            <div className=" flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
-              <motion.div layoutId={`image-${card.title}-${id}`}>
-                <Image
-                  width={390}
-                  height={200}
-                  src={card.src}
-                  alt={card.title}
-                  priority={false}
-                  quality={75}
-                  placeholder="blur"
+            <div className="flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
+              {/* Show only the first image initially */}
+              {card.images && card.images.length > 0 && (
+                <motion.div layoutId={`image-${card.title}-${id}`}>
+                  <Image
+                    width={390}
+                    height={200}
+                    src={card.images[0]}  // Show the first image only
+                    alt={`${card.title} - main image`}
+                    placeholder="blur"
                     blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-                  loading="lazy"
-                  className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
-                />
-              </motion.div>
+                    className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
+                  />
+                </motion.div>
+              )}
               <motion.div className="flex flex-col md:flex-col lg:flex-col items-start md:items-start lg:items-start lg:gap-2 justify-between gap-2 md:w-[520px] lg:w-[650px] flex-grow">
                 <div className="flex flex-col text-left md:items-start md:justify-end lg:items-start lg:justify-start">
                   <motion.h3
@@ -160,7 +173,7 @@ export function ExpandableCardCardDemo() {
                 </div>
                 <div className="flex flex-col gap-2 pt-4">
                   <div className="flex flex-wrap gap-2">
-                    {card.tools && card.tools.split(',').map((tool, index) => (
+                    {card.tools && card.tools.split(',').map((tool: string, index: string) => (
                       <span
                         key={index}
                         className="bg-gray-200 dark:bg-white/10 text-gray-800 dark:text-gray-100 px-3 py-2 lg:py-1 rounded-md text-xs font-medium dark:font-semibold"
@@ -170,18 +183,38 @@ export function ExpandableCardCardDemo() {
                     ))}
                   </div>
                   <div className="flex items-start justify-start">
-                  <motion.button
-                    layoutId={`button-${card.title}-${id}`}
-                    className="w-fit py-2 px-4 text-sm rounded-full font-bold bg-black text-white hover:bg-black/80 dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 hover:duration-200"
-                    onClick={() => window.open(card.ctaLink, '_blank')}
+                    <motion.button
+                      layoutId={`button-${card.title}-${id}`}
+                      className="w-fit py-2 px-4 text-sm rounded-full font-bold bg-black text-white hover:bg-black/80 dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 hover:duration-200"
+                      onClick={() => window.open(card.ctaLink, '_blank')}
                     >
-                    {card.ctaText}
-                  </motion.button>
-                    </div>
+                      {ctaTextLogo.github}
+                    </motion.button>
+                  </div>
                 </div>
-
               </motion.div>
             </div>
+
+            {/* Render remaining images when the card is clicked */}
+            {active === card && card.images && card.images.length > 1 && (
+              <div className="flex flex-wrap gap-4 mt-4">
+                {card.images.slice(1).map((imageUrl: string, index: number) => (
+                  <Image
+                    key={index}
+                    width={390}
+                    height={200}
+                    src={imageUrl}
+                    alt={`${card.title} - image ${index + 2}`}
+                    priority={false}
+                    quality={75}
+                    placeholder="blur"
+                    blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
+                    loading="lazy"
+                    className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
+                  />
+                ))}
+              </div>
+            )}
           </motion.div>
         ))}
       </ul>

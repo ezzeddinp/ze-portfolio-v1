@@ -3,7 +3,7 @@ import React from 'react'
 import SectionSubHeading from '@/common/components/elements/SectionSubHeading'
 import { BiSolidUpArrow } from "react-icons/bi";
 import { PiDotOutlineFill } from 'react-icons/pi';
-import clsxm from '@/common/libs/clsxm';
+// import clsxm from '@/common/libs/clsxm';
 
 export default function Footer() {
     const scrollToTop = () => {
@@ -41,11 +41,11 @@ export default function Footer() {
                     </SectionSubHeading>
                 </div>
             </section>
-            <div className={clsxm([
+            {/* <div className={clsxm([
                     'w-full max-w-[650px] h-[400px] rounded-full overflow-hidden',
                     'dark:bg-gradient-to-r dark:from-blue-800 dark:to-[#0f3324]/30 blur-[150px]',
                     'absolute bottom-[40%] -left-[5%] transform -translate-x-1/2 -translate-y-1/2 z-[-2]', // Centered
-                ])} />
+                ])} /> */}
         </>
     )
 }

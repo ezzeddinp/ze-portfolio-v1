@@ -157,7 +157,7 @@ const GlanceProject: React.FC = () => {
           quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="lazy"
+          loading="eager"
           description="-"
         />
 
@@ -170,7 +170,7 @@ const GlanceProject: React.FC = () => {
           quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="lazy"
+          loading="eager"
           description="Simple forum chat where users can chat globally"
           link="https://chat-delta-ruby-13.vercel.app/"
         />
@@ -184,7 +184,7 @@ const GlanceProject: React.FC = () => {
           quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="lazy"
+          loading="eager"
           description="Build with React Native"
           link="https://github.com/ezzeddinp/notes-app-homepage"
         />
@@ -198,7 +198,7 @@ const GlanceProject: React.FC = () => {
           quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="lazy"
+          loading="eager"
           description="-"
         />
       </div>

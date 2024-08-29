@@ -212,11 +212,7 @@ export async function ExpandableCardCardDemo() {
           </motion.div>
         ))}
       </ul>
-      <div className={clsxm([
-                    'w-full max-w-[450px] h-[400px] rounded-full overflow-hidden snap-none',
-                    'dark:bg-gradient-to-r dark:from-blue-900 dark:to-[#0f3324]/30 blur-[150px]',
-                    'absolute bottom-[10%] right-0 transform translate-x-[-10%] -translate-y-1/2 z-[-2]', // Adjusted positioning
-                ])} />
+
     </>
   );
 }

@@ -3,7 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from './components/theme-provider';
 import Layouts from '@/common/components/layouts/index';
-// import GradientMain from '@/components/ui/gradient/page';
+import GradientMain from '@/components/ui/gradient/page';
 const inter = Inter({ subsets: ['latin'] });
 import { Suspense } from 'react';
 
@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} overflow-hidden dark:bg-transparent`}>
       <Analytics />
       <SpeedInsights />
-        {/* <GradientMain> */}
+        <GradientMain>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -43,7 +43,7 @@ export default function RootLayout({
               </Suspense>
             </div>
           </ThemeProvider>
-        {/* </GradientMain> */}
+        </GradientMain>
       </body>
     </html>
   );

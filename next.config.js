@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        formats: ['image/avif'],
+        formats: ['image/avif', 'image/webp'],
         remotePatterns: [
             {
                 protocol: 'https',
@@ -40,6 +40,9 @@ const nextConfig = {
             },
         ],
     },
+    // Optional: Add additional configurations
+    reactStrictMode: true,
+    swcMinify: true,
 }
 
 module.exports = nextConfig;

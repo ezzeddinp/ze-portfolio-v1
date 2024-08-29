@@ -11,10 +11,9 @@ import supabase from '../../../../utils/supabase';
 import { SiGithub } from 'react-icons/si';
 import SkeletonLoader from "@/app/components/detail-project/loading";
 
-
 const ctaTextLogo = {
   github: <SiGithub size={20} />,
-}
+};
 
 const CardDetail: React.FC = () => {
   const { id } = useParams();
@@ -26,16 +25,22 @@ const CardDetail: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const { data, error } = await supabase
-        .from('project')
-        .select('*')
-        .eq('title', decodedId)
-        .single();
+      try {
+        const { data, error } = await supabase
+          .from('project')
+          .select('*')
+          .eq('title', decodedId)
+          .single();
 
-      if (error) {
-        console.error(error);
-      } else {
-        setCard(data);
+        if (error) {
+          console.error(error);
+          setCard(null);
+        } else {
+          setCard(data);
+        }
+      } catch (err) {
+        console.error('Error fetching data:', err);
+        setCard(null);
       }
       setLoading(false);
     };
@@ -43,13 +48,11 @@ const CardDetail: React.FC = () => {
     fetchData();
   }, [decodedId]);
 
-  if (loading) return (
-    <SkeletonLoader />
-  );
+  if (loading) return <SkeletonLoader />;
   if (!card) return <div>Card not found</div>;
 
   const imageUrls: string[] = Array.isArray(card.images) ? card.images : [];
-  const GithubIcon = ctaTextLogo.github; // Extract the icon component
+  const GithubIcon = ctaTextLogo.github;
 
   return (
     <>
@@ -89,7 +92,6 @@ const CardDetail: React.FC = () => {
                     {card.content}
                   </p>
                 </div>
-
               </div>
               <motion.div>
                 <motion.div
@@ -121,7 +123,6 @@ const CardDetail: React.FC = () => {
                     >
                       <button className='flex flex-row justify-between gap-4 w-full'>
                         <div className='flex flex-row gap-2 items-center'>
-                          {/* Render the icon component correctly */}
                           {GithubIcon}
                           <p className='text-left text-sm font-semibold'>{card.ctaText}</p>
                           <p className='text-left text-sm font-semibold'>{card.ctaDescriptionLink}</p>

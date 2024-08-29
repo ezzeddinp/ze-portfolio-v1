@@ -12,9 +12,9 @@ const ProjectPage = () => {
     <>
       {/* Debug with simplified styles */}
       <div className={clsxm([
-        'w-[650px] h-[400px] rounded-full',
-        'dark:bg-gradient-to-r dark:from-blue-800/45 dark:to-[#0f3324]/30 blur-[150px]',
-        'absolute top-0 left-0 z-[-2]', // Adjusted for simplicity
+        'w-full max-w-[650px] h-[400px] rounded-full overflow-hidden snap-none overscroll-none overflow-x-hidden',
+        'dark:bg-gradient-to-r dark:from-blue-800/85 dark:to-[#0f3324]/30 blur-[150px]',
+        'absolute top-0 lg:left-0 left-1/2 transform -translate-x-1/2 lg:transform-none z-[-2]', // Make position responsive
       ])}>
       </div>
       <main className='relative z-40'>

@@ -31,7 +31,7 @@ const Logo = () => {
       {/* </div> */}
       <div className="flex items-center justify-center gap-2 p-4">
           <Link href="/" passHref>
-            <h2 className="font-sora flex-grow whitespace-nowrap text-black dark:text-neutral-400 text-lg font-medium lg:text-lg">zeddin</h2>
+            <h2 className="font-sora flex-grow whitespace-nowrap text-black dark:text-neutral-300 text-lg font-medium lg:text-lg">zeddin</h2>
           </Link>
           <Tooltip title="Verified">
             <VerifiedIcon size={15} className="text-blue-400" />

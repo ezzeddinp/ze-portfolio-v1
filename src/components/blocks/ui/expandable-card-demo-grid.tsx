@@ -6,8 +6,8 @@ import { useOutsideClick } from "../../../../hooks/useOutsideClick";
 import { cards } from "./expandable-card-data";
 import { notFound, useRouter } from "next/navigation";
 import supabase from "../../../../utils/supabase";
-
 import { SiGithub } from "react-icons/si";
+import clsxm from "@/common/libs/clsxm";
 
 export const ctaTextLogo = {
   github: <SiGithub size={20} />,
@@ -18,7 +18,6 @@ export async function ExpandableCardCardDemo() {
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
   const router = useRouter();
-
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -43,8 +42,6 @@ export async function ExpandableCardCardDemo() {
     .select('*')
     .order("id");
   if (!project) return notFound();
-  // console.log(project);
-
 
   return (
     <>
@@ -133,13 +130,13 @@ export async function ExpandableCardCardDemo() {
       </AnimatePresence> */}
 
       {/* Cards */}
-      <ul className="scrollbar-hide max-w-sm md:max-w-2xl lg:max-w-3xl mx-auto px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-scroll md:overflow-x-hidden lg:overflow-x-hidden gap-4 py-20 lg:py-32">
+      <ul className="scrollbar-hide max-w-[390px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 py-20 lg:py-32">
         {project.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => router.push(`/experience-detail/${card.title}`)}
-            className="snap-center lg:snap-none shadow-md hover:shadow-lg hover:duration-500 p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50  dark:bg-black/20 dark:hover:bg-gradient-to-tl dark:hover:from-blue-900/15 lg:dark:hover:from-blue-900/30 dark:hover:via-blue-700/30 dark:hover:to-blue-900/10 dark:hover:scale-100 dark:hover:shadow-lg dark:hover:shadow-blue-700/80  transition-all duration-300  rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
+            className="snap-center lg:snap-none shadow-md hover:shadow-lg hover:duration-500 p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 dark:hover:bg-gradient-to-tl dark:hover:from-blue-900/15 lg:dark:hover:from-blue-900/20 dark:hover:via-blue-900/10 dark:hover:to-blue-900/10 dark:hover:scale-100 dark:hover:shadow-md dark:hover:shadow-blue-900/95 transition-all duration-300 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
           >
             <div className="flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
               {/* Show only the first image initially */}
@@ -205,11 +202,8 @@ export async function ExpandableCardCardDemo() {
                     height={200}
                     src={imageUrl}
                     alt={`${card.title} - image ${index + 2}`}
-                    priority={false}
-                    quality={75}
                     placeholder="blur"
                     blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-                    loading="lazy"
                     className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
                   />
                 ))}
@@ -218,7 +212,11 @@ export async function ExpandableCardCardDemo() {
           </motion.div>
         ))}
       </ul>
-
+      <div className={clsxm([
+                    'w-full max-w-[450px] h-[400px] rounded-full overflow-hidden snap-none',
+                    'dark:bg-gradient-to-r dark:from-blue-900 dark:to-[#0f3324]/30 blur-[150px]',
+                    'absolute bottom-[10%] right-0 transform translate-x-[-10%] -translate-y-1/2 z-[-2]', // Adjusted positioning
+                ])} />
     </>
   );
 }

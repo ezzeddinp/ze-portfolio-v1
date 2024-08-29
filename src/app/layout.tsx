@@ -3,7 +3,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from './components/theme-provider';
 import Layouts from '@/common/components/layouts/index';
-import GradientMain from '@/components/ui/gradient/page';
+// import GradientMain from '@/components/ui/gradient/page';
 const inter = Inter({ subsets: ['latin'] });
 import { Suspense } from 'react';
 
@@ -25,14 +25,14 @@ export default function RootLayout({
       <body className={`${inter.className} overflow-hidden dark:bg-transparent`}>
       <Analytics />
       <SpeedInsights />
-        <GradientMain>
+        {/* <GradientMain> */}
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
           >
             <div
-              className={`z-20 relative min-h-screen mx-auto max-w-full bg-gradient-to-b from-white via-gray-100 to-gray-50 dark:bg-gradient-to-b/60 dark:from-black/60 dark:via-black/60 dark:to-zinc-950/60 transition duration-500 w-full overflow-x-hidden`}
+              className={`z-20 relative min-h-screen mx-auto max-w-full bg-gradient-to-b from-white via-gray-100 to-gray-50 dark:bg-gradient-to-b/60 dark:from-black/70 dark:via-black/70 dark:to-zinc-950/70 transition duration-500 w-full overflow-x-hidden`}
               
             >
               <NavbarMain className='z-50' />
@@ -43,7 +43,7 @@ export default function RootLayout({
               </Suspense>
             </div>
           </ThemeProvider>
-        </GradientMain>
+        {/* </GradientMain> */}
       </body>
     </html>
   );

@@ -18,7 +18,7 @@ const fadeInUpVariants = {
 };
 
 const AnimatedSectionHeading: React.FC<{ title: string; className?: string }> = ({ title, className }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const controls = useAnimation();
 
   React.useEffect(() => {
@@ -39,7 +39,7 @@ const AnimatedSectionHeading: React.FC<{ title: string; className?: string }> = 
 };
 
 const AnimatedSectionSubHeading: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const controls = useAnimation();
 
   React.useEffect(() => {
@@ -83,7 +83,7 @@ const ProjectItem: React.FC<{
   placeholder = "blur",
   loading = "lazy"
 }) => {
-  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.1 });
   const controls = useAnimation();
 
   React.useEffect(() => {
@@ -153,11 +153,8 @@ const GlanceProject: React.FC = () => {
           alt="Project 1"
           title="Soon"
           gridProps="col-span-4 row-span-2 md:col-span-2 lg:p-0"
-          priority={false}
-          quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="eager"
           description="-"
         />
 
@@ -166,11 +163,9 @@ const GlanceProject: React.FC = () => {
           alt="Project 2"
           title="Forum Chat"
           gridProps="col-span-4 row-span-2 md:col-span-2 lg:p-0"
-          priority={false}
-          quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="eager"
+          
           description="Simple forum chat where users can chat globally"
           link="https://chat-delta-ruby-13.vercel.app/"
         />
@@ -180,11 +175,9 @@ const GlanceProject: React.FC = () => {
           alt="Project 3"
           title="Notes App"
           gridProps="col-span-4 row-span-4 lg:p-0"
-          priority={false}
-          quality={75}
           placeholder="blur"
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-          loading="eager"
+          
           description="Build with React Native"
           link="https://github.com/ezzeddinp/notes-app-homepage"
         />
@@ -194,9 +187,7 @@ const GlanceProject: React.FC = () => {
           alt="Project 4"
           title="Soon"
           gridProps="col-span-4 row-span-4 md:row-span-2 md:row-start-3 lg:p-0"
-          priority={false}
-          quality={75}
-          placeholder="blur"
+          
           blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
           loading="eager"
           description="-"

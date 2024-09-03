@@ -136,7 +136,7 @@ export async function ExpandableCardCardDemo() {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => router.push(`/experience-detail/${card.title}`)}
-            className="snap-center lg:snap-none shadow-md hover:shadow-lg hover:duration-500 p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 dark:hover:bg-gradient-to-tl dark:hover:from-blue-900/15 lg:dark:hover:from-blue-900/20 dark:hover:via-blue-900/10 dark:hover:to-blue-900/10 dark:hover:scale-100 dark:hover:shadow-md dark:hover:shadow-blue-900/95 transition-all duration-300 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
+            className="snap-center lg:snap-none shadow-md hover:shadow-lg hover:duration-500 p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 dark:hover:bg-gradient-to-tl dark:hover:from-neutral-900/15 lg:dark:hover:from-neutral-900/20 dark:hover:via-neutral-900/10 dark:hover:to-neutral-900/10 dark:hover:scale-100 dark:hover:shadow-md dark:hover:shadow-neutral-700/95 transition-all duration-300 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
           >
             <div className="flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
               {/* Show only the first image initially */}

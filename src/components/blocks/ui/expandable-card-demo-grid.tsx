@@ -1,16 +1,45 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useOutsideClick } from "../../../../hooks/useOutsideClick";
 import { cards } from "./expandable-card-data";
 import { notFound, useRouter } from "next/navigation";
 import supabase from "../../../../utils/supabase";
-import { SiGithub } from "react-icons/si";
-import clsxm from "@/common/libs/clsxm";
+import {
+  SiExpo,
+  SiGithub,
+  SiJavascript,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiReact,
+  SiSupabase,
+  SiTailwindcss,
+  SiTypescript,
+  SiPrisma,
+  SiMongodb
 
-export const ctaTextLogo = {
+} from 'react-icons/si';
+import { FaJava, FaStripe } from "react-icons/fa";
+import { GrMysql } from "react-icons/gr";
+
+const iconSize = '25px';
+const toolsIcon: Record<string, JSX.Element> = {
   github: <SiGithub size={20} />,
+  JavaScript: <SiJavascript size={iconSize} className="text-yellow-400" />,
+  TypeScript: <SiTypescript size={iconSize} className="text-blue-400" />,
+  NextJs: <SiNextdotjs size={iconSize} className='text-black dark:text-white' />,
+  TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
+  'React Native': <SiReact size={iconSize} className="text-sky-600" />,
+  NodeJs: <SiNodedotjs size={iconSize} className="text-green-600" />,
+  Github: <SiGithub size={iconSize} className="text-black dark:text-white" />,
+  Java: <FaJava size={iconSize} className='dark:text-white text-orange-800' />,
+  MySQL: <GrMysql size={iconSize} className=' text-blue-600' />,
+  Supabase: <SiSupabase size={iconSize} className="text-green-600" />,
+  MongoDB: <SiMongodb size={iconSize} className="text-green-600" />,
+  Prisma: <SiPrisma size={iconSize} className="text-black dark:text-white" />,
+  Expo: <SiExpo size={iconSize} className="text-black dark:text-white" />,
+  Stripe: <FaStripe size={30} className="text-purple-600 dark:text-purple-900" />
 }
 
 export async function ExpandableCardCardDemo() {
@@ -45,90 +74,6 @@ export async function ExpandableCardCardDemo() {
 
   return (
     <>
-      {/* <AnimatePresence>
-        {active && typeof active === "object" && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10"
-          />
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
-        {active && typeof active === "object" ? (
-          <div className="fixed inset-0 grid place-items-center z-[100]">
-            <motion.button
-              key={`button-${active.title}-${id}`}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.05 }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
-              onClick={() => setActive(null)}
-            >
-              <CloseIcon />
-            </motion.button>
-            <motion.div
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
-            >
-              <motion.div layoutId={`image-${active.title}-${id}`}>
-                <Image
-                  priority
-                  width={150}
-                  height={150}
-                  src={active.src}
-                  alt={active.title}
-                  className="w-full h-80 lg:h-[290px] sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
-                />
-              </motion.div>
-
-              <div>
-                <div className="flex justify-between items-start p-4">
-                  <div className="">
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 dark:text-neutral-200 text-left"
-                    >
-                      {active.title}
-                    </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-left"
-                    >
-                      {active.description}
-                    </motion.p>
-                  </div>
-
-                  <motion.a
-                    layoutId={`button-${active.title}-${id}`}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-green-500 text-white"
-                  >
-                    {active.ctaText}
-                  </motion.a>
-                </div>
-                <div className="pt-4 relative px-4">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-xs lg:text-xs h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] text-left"
-                  >
-                    {typeof active.content === "function" ? active.content() : active.content}
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        ) : null}
-      </AnimatePresence> */}
-
       {/* Cards */}
       <ul className="scrollbar-hide max-w-[390px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 py-20 lg:py-32">
         {project.map((card) => (
@@ -168,24 +113,24 @@ export async function ExpandableCardCardDemo() {
                     {card.description}
                   </motion.p>
                 </div>
-                <div className="flex flex-col gap-2 pt-4">
-                  <div className="flex flex-wrap gap-2">
+                <div className="flex flex-col gap-2 pt-6">
+                  <div className="flex flex-wrap gap-2 items-center">
                     {card.tools && card.tools.split(',').map((tool: string, index: string) => (
                       <span
                         key={index}
-                        className="bg-gray-200 dark:bg-white/10 text-gray-800 dark:text-gray-100 px-3 py-2 lg:py-1 rounded-md text-xs font-medium dark:font-semibold"
+                        className="px-1 text-neutral-800 dark:text-neutral-300 lg:py-1 rounded-md text-xs font-medium dark:font-semibold"
                       >
-                        {tool.trim()}
+                        {toolsIcon[tool.trim()] ? toolsIcon[tool.trim()] : tool.trim()}
                       </span>
                     ))}
-                  </div>
-                  <div className="flex items-start justify-start">
+                  </div> 
+                  <div className="flex items-start justify-start py-4 px-2 lg:px-0">
                     <motion.button
                       layoutId={`button-${card.title}-${id}`}
                       className="w-fit py-2 px-4 text-sm rounded-full font-bold bg-black text-white hover:bg-black/80 dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 hover:duration-200"
                       onClick={() => window.open(card.ctaLink, '_blank')}
                     >
-                      {ctaTextLogo.github}
+                      {toolsIcon.github}
                     </motion.button>
                   </div>
                 </div>

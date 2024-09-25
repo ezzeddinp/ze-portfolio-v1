@@ -88,7 +88,7 @@ const CardDetail: React.FC = () => {
                 <h3 className='text-black dark:text-white font-extrabold text-xl'>{card.title}</h3>
                 <p className='text-neutral-500 dark:text-neutral-500 font-normal text-md'>{card.description}</p>
                 <div className='flex flex-col justify-center items-center pt-4 w-full max-w-4xl lg:max-w-xl mx-auto'>
-                  <p className='text-gray-800 dark:text-neutral-400 text-base lg:text-md leading-relaxed font-normal text-justify'>
+                  <p className='text-gray-800 dark:text-neutral-400 text-base lg:text-md leading-relaxed font-normal text-left'>
                     {card.content}
                   </p>
                 </div>

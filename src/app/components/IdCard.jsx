@@ -27,7 +27,7 @@ export default function App() {
       </Physics>
       <Environment background>
         {/* Set a gradient-like background using colors */}
-        <color attach="background" args={['blue']} />
+        {/* <color attach="background" args={['blue']} /> */}
         <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
         <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
         <Lightformer intensity={3} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />

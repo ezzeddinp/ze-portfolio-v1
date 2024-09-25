@@ -11,9 +11,7 @@ import { Poppins } from "next/font/google";
 const P700 = Poppins({ weight: "700", subsets: ["latin"] });
 
 // The words to animate in TextGenerateEffect
-const words = `deeply inspired by the transformative power of innovations that shape my constantly evolving world.
-My ultimate goal is to kindle a sense of wonder and fascination in the hearts of those who venture into 
-the vast digital realm. As I explore this captivating world of boundless possibilities, my mission becomes clear`;
+const words = "A student that specializing in web and mobile app development.Currently focused on the art of creating web applications. Highly dedicated to enhancing skills in both Front-End and Back-End development.";
 
 // Define the animation variants for the letters
 const nameVariants = {
@@ -32,7 +30,7 @@ const nameVariants = {
 // Array of words to animate individually
 const wordsArray = ["Mohammad", "Ezzeddin", "Pratama"];
 
-function IntroLogic( {className}:{ className?: string } ): React.JSX.Element {
+function IntroLogic({ className }: { className?: string }): React.JSX.Element {
   const controls = useAnimation(); // Controls for framer-motion animation
   const [isLoading, setIsLoading] = useState<boolean>(true); // State to manage loading
 
@@ -91,7 +89,7 @@ function IntroLogic( {className}:{ className?: string } ): React.JSX.Element {
             <Link
               target="_blank"
               text="Resume"
-              url="/Mohammad_Ezzeddin_Pratama_CV_ATS.pdf"
+              url="/Mohammad Ezzeddin Pratama - Student College _ Full-Stack Developer - CV.pdf"
             />
           </motion.div>
         </>

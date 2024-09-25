@@ -136,12 +136,12 @@ const GlanceProject: React.FC = () => {
       <Container>
         <div className='text-center items-center justify-center'>
           <AnimatedSectionHeading
-            title="Project"
+            title="Github "
             className="text-3xl lg:pt-7"
           />
           <AnimatedSectionSubHeading>
             <p className="mb-[16px] text-md text-neutral-600 dark:text-neutral-400">
-              Glance of Projects
+              Small Github Projects
             </p>
           </AnimatedSectionSubHeading>
         </div>

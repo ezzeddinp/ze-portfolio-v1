@@ -13,8 +13,8 @@ const ProjectPage: React.FC = () => {
       <IntroMain />
       <Container>
         <SkillMain />
-        <Content />
         <ExpandableCardMain />
+        <Content />
         <Footer />
       </Container>
     </main>

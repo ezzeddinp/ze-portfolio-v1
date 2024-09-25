@@ -14,8 +14,7 @@ export default function Footer() {
     }
 
     return (
-        <>
-            <section className="relative py-4 lg:py-6 px-4 lg:px-10 max-w-full">
+            <section className="relative py-8 pt-32 lg:pb-20 lg:pt-40 px-4 lg:px-14 max-w-full">
                 {/* Background Gradient */}
                 <div className="relative flex flex-row justify-between items-end gap-4 lg:px-5 px-2">
                     {/* Subheadings and Content */}
@@ -41,11 +40,10 @@ export default function Footer() {
                     </SectionSubHeading>
                 </div>
             </section>
-            {/* <div className={clsxm([
-                    'w-full max-w-[650px] h-[400px] rounded-full overflow-hidden',
-                    'dark:bg-gradient-to-r dark:from-blue-800 dark:to-[#0f3324]/30 blur-[150px]',
-                    'absolute bottom-[40%] -left-[5%] transform -translate-x-1/2 -translate-y-1/2 z-[-2]', // Centered
-                ])} /> */}
-        </>
     )
 }
+    {/* <div className={clsxm([
+            'w-full max-w-[650px] h-[400px] rounded-full overflow-hidden',
+            'dark:bg-gradient-to-r dark:from-blue-800 dark:to-[#0f3324]/30 blur-[150px]',
+            'absolute bottom-[40%] -left-[5%] transform -translate-x-1/2 -translate-y-1/2 z-[-2]', // Centered
+        ])} /> */}

@@ -22,6 +22,8 @@ import {
 } from 'react-icons/si';
 import { FaJava, FaStripe } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
+import SectionHeading from "@/common/components/elements/SectionHeading";
+import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 
 const iconSize = '25px';
 const toolsIcon: Record<string, JSX.Element> = {
@@ -74,8 +76,20 @@ export async function ExpandableCardCardDemo() {
 
   return (
     <>
+      <div className="space-y-2 pt-20 lg:pt-32">
+        <SectionHeading
+          className="text-3xl font-bold items-center justify-center font-sora"
+          title="Project"
+        // icon={<HiCode className="mr-1 text-3xl font-bold" />}
+        />
+        <SectionSubHeading>
+          <p className="font-sora mb-[16px] text-md font-normal text-neutral-600 dark:text-neutral-400 items-center justify-center">
+            Glance of Projects
+          </p>
+        </SectionSubHeading>
+      </div>
       {/* Cards */}
-      <ul className="scrollbar-hide max-w-[390px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 py-20 lg:py-32">
+      <ul className="scrollbar-hide max-w-[390px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 pb-20 pt-5 lg:pt-16 lg:pb-32">
         {project.map((card) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
@@ -123,7 +137,7 @@ export async function ExpandableCardCardDemo() {
                         {toolsIcon[tool.trim()] ? toolsIcon[tool.trim()] : tool.trim()}
                       </span>
                     ))}
-                  </div> 
+                  </div>
                   <div className="flex items-start justify-start py-4 px-2 lg:px-0">
                     <motion.button
                       layoutId={`button-${card.title}-${id}`}

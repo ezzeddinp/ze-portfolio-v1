@@ -18,7 +18,7 @@ const MobileMenuButton = ({ expandMenu, setExpandMenu }: MobileMenuButtonProps) 
       {menuSpanData.map(item => (
         <StyledMenuSpan
           key={item.index}
-          className={clsx('bg-neutral-950 dark:bg-neutral-100 ', expandMenu && 'active')}
+          className={clsx('bg-neutral-950 dark:bg-neutral-200 ', expandMenu && 'active')}
         />
       ))}
     </StyledMenu>
@@ -31,14 +31,14 @@ const StyledMenu = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 21px;
-  width: 26px;
+  height: 16px;
+  width: 20px;
   cursor: pointer;
 `
 
 const StyledMenuSpan = styled.span`
   width: 100%;
-  height: 3px;
+  height: 1px;
   transition: all 0.5s ease;
   border-radius: 10px;
 

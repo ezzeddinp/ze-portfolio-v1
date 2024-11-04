@@ -8,7 +8,7 @@ export default function SkillList() {
     <section className="py-[80px] px-[8px] md:px-6 lg:px-4">
       <div className="space-y-2">
         <SectionHeading
-          className="text-3xl font-bold items-center justify-center font-sora"
+          className="text-3xl items-center justify-center"
           title="Skills"
         // icon={<HiCode className="mr-1 text-3xl font-bold" />}
         />

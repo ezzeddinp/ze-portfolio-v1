@@ -1,15 +1,12 @@
-import dynamic from 'next/dynamic';
-import React from 'react';
+// src/app/layouts/ui/page.tsx
 
-// Dynamically import the CardDetail component
-const CardDetail = dynamic(() => import('@/app/components/detail-project/page'), {
-  ssr: false,  // Disable server-side rendering for this component
-});
+import React from 'react';
+import CardDetailClient from '../../../app/components/CardDetailClient';  // Adjust the import path as necessary
 
 const MainCardDetail: React.FC = () => {
   return (
     <div>
-      <CardDetail />
+      <CardDetailClient />  {/* Use the Client Component here */}
     </div>
   );
 };

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { cn } from "../../lib/utils";
 import { ModeToggle } from "../theme-toggle";
-import Logo from "../Header/Logo";
+// import Logo from "../Header/Logo";
 
 export default function MainNav({
 	className,
@@ -44,7 +44,7 @@ export default function MainNav({
 				className={`hidden z-[51] lg:flex fixed top-3 w-max h-max rounded-full backdrop-blur-lg  flex-row justify-center text-center items-center right-1/2 translate-x-1/2 ${className}`}
 				{...props}
 			>
-				<Logo />
+				{/* <Logo /> */}
 
 				<button
 					className="inline-block z-50"
@@ -82,7 +82,7 @@ export default function MainNav({
 							href={route.href}
 							className={cn(
 								"text-[12px] lg:text-sm font-medium transition-colors hover:text-black hover:duration-500 dark:hover:text-white dark:hover:duration-500",
-								route.active ? "text-white dark:text-black" : "text-gray-400"
+								route.active ? "text-white dark:text-black" : "text-neutral-400"
 							)}
 						>
 							{route.label}

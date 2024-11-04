@@ -99,7 +99,7 @@ const ProjectItem: React.FC<{
       className={`relative group ${gridProps}`}
     >
       <Image
-        className="h-full w-full object-cover shadow-xl sm:rounded-[3px] transition duration-500 group-hover:scale-105 group-hover:brightness-[.2]"
+        className="h-full w-full object-cover shadow-xl sm:rounded-[3px] transition duration-500 group-hover:scale-105 group-hover:brightness-[0.3] dark:brightness-[.2] dark:group-hover:brightness-100"
         src={src}
         alt={alt}
         width={300}

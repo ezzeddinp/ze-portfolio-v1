@@ -38,11 +38,15 @@ const nextConfig = {
                 hostname: 'media.dev.to',
                 pathname: '/**',
             },
+            {
+                protocol: "https",
+                hostname: "media2.dev.to",
+                pathname: "/**"
+            }
         ],
     },
     // Optional: Add additional configurations
-    reactStrictMode: true,
-    swcMinify: true,
+    reactStrictMode: true
 }
 
 module.exports = nextConfig;

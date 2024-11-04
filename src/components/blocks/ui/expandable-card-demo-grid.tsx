@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -18,7 +18,6 @@ import {
   SiTypescript,
   SiPrisma,
   SiMongodb
-
 } from 'react-icons/si';
 import { FaJava, FaStripe } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
@@ -44,11 +43,29 @@ const toolsIcon: Record<string, JSX.Element> = {
   Stripe: <FaStripe size={30} className="text-purple-600 dark:text-purple-900" />
 }
 
-export async function ExpandableCardCardDemo() {
+export default function ExpandableCardCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
+  const [project, setProject] = useState<any[]>([]);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
   const router = useRouter();
+
+  useEffect(() => {
+    // Fetch project data from Supabase
+    const fetchProjectData = async () => {
+      const { data, error } = await supabase
+        .from('project')
+        .select('*')
+        .order("id");
+      if (error) {
+        console.error("Error fetching projects:", error);
+        return notFound();
+      }
+      setProject(data);
+    };
+
+    fetchProjectData();
+  }, []);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -66,12 +83,9 @@ export async function ExpandableCardCardDemo() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
+  
   useOutsideClick(ref, () => setActive(null));
 
-  const { data: project } = await supabase
-    .from('project')
-    .select('*')
-    .order("id");
   if (!project) return notFound();
 
   return (
@@ -80,7 +94,6 @@ export async function ExpandableCardCardDemo() {
         <SectionHeading
           className="text-3xl font-bold items-center justify-center font-sora"
           title="Project"
-        // icon={<HiCode className="mr-1 text-3xl font-bold" />}
         />
         <SectionSubHeading>
           <p className="font-sora mb-[16px] text-md font-normal text-neutral-600 dark:text-neutral-400 items-center justify-center">

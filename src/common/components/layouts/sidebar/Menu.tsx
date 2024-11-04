@@ -6,7 +6,7 @@ import MenuItem from './MenuItem'
 import Breakline from '../../elements/Breakline'
 import { Poppins } from 'next/font/google';
 
-const P600 = Poppins({ weight: "600", subsets: ["latin"] });
+const P600 = Poppins({ weight: "300", subsets: ["latin"] });
 
 
 type MenuProps = {

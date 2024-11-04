@@ -31,7 +31,7 @@ export interface Props {
 
 const Element: React.FC<Props> = ({ target, text, url, size = "text-base", theme = "base", flip = false }) => {
   const themes = {
-    base: ["text-zinc-900", "dark:text-zinc-100"],
+    base: ["text-neutral-900", "dark:text-zinc-300"],
     alt: ["text-red-600", "dark:text-red-400"],
   };
 
@@ -40,7 +40,7 @@ const Element: React.FC<Props> = ({ target, text, url, size = "text-base", theme
     <ElementTag
     target={target}
       href={url}
-      className={`group flex w-fit items-center gap-1 font-semibold ${size} ${themes[theme].join(
+      className={`group flex w-fit items-center gap-1 text-sm font-serif italic ${size} ${themes[theme].join(
         " "
       )} ${flip ? "flex-row-reverse" : "flex-row"}`}
     >

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import {Poppins} from 'next/font/google';
-const P600 = Poppins({ weight: "700", subsets: ["latin"] });
+const P600 = Poppins({ weight: "300", subsets: ["latin"] });
 
 interface SectionHeadingProps {
   title: string;

@@ -17,7 +17,7 @@ const ctaTextLogo = {
 
 const CardDetail: React.FC = () => {
   const { id } = useParams();
-  const decodedId = Array.isArray(id) ? decodeURIComponent(id[0]) : decodeURIComponent(id);
+  const decodedId = id ?(Array.isArray(id) ? decodeURIComponent(id[0]) : decodeURIComponent(id)) : null;
 
   const [card, setCard] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
@@ -84,11 +84,11 @@ const CardDetail: React.FC = () => {
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
             <motion.div className='flex flex-col justify-center items-center lg:items-start px-2 sm:px-36 md:px-36 lg:px-60'>
-              <div className='text-left pt-4'>
-                <h3 className='text-black dark:text-white font-extrabold text-xl'>{card.title}</h3>
-                <p className='text-neutral-500 dark:text-neutral-500 font-normal text-md'>{card.description}</p>
+              <div className='text-left pt-4 mt-6'>
+                <h3 className='text-black dark:text-white font-extrabold text-2xl'>{card.title}</h3>
+                <p className='text-neutral-500 dark:text-neutral-500 font-normal italic text-md'>{card.description}</p>
                 <div className='flex flex-col justify-center items-center pt-4 w-full max-w-4xl lg:max-w-xl mx-auto'>
-                  <p className='text-gray-800 dark:text-neutral-400 text-base lg:text-md leading-relaxed font-normal text-left'>
+                  <p className='text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left'>
                     {card.content}
                   </p>
                 </div>

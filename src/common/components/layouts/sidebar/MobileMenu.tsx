@@ -8,7 +8,7 @@ import Breakline from '../../elements/Breakline'
 import Menu from './Menu'
 import Link from 'next/link';
 
-const P400 = Poppins({ weight: "400", subsets: ["latin"] });
+const P400 = Poppins({ weight: "300", subsets: ["latin"] });
 const MobileMenu: FC = () => {
   const filterdMenu = MENU_ITEMS?.filter(item => item?.isShow)
   return (

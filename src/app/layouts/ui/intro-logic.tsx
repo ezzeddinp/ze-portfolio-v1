@@ -11,7 +11,7 @@ import { Poppins } from "next/font/google";
 const P700 = Poppins({ weight: "700", subsets: ["latin"] });
 
 // The words to animate in TextGenerateEffect
-const words = "A student that specializing in web and mobile app development.Currently focused on the art of creating web applications. Highly dedicated to enhancing skills in both Front-End and Back-End development.";
+const words = "A student that specializing in web and mobile app development. Currently focused on the art of creating web applications. Highly dedicated to enhancing skills in both Front-End and Back-End development.";
 
 // Define the animation variants for the letters
 const nameVariants = {
@@ -70,7 +70,7 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
                     initial="hidden"
                     animate={controls}
                     variants={nameVariants}
-                    className="inline-block dark:text-zinc-200 text-black"
+                    className="inline-block font-extralight text-[55px] dark:text-zinc-200 text-black"
                   >
                     {letter}
                   </motion.span>
@@ -80,10 +80,11 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
             ))}
           </motion.h1>
           <TextGenerateEffect words={words} />
-          <motion.div className="flex flex-col gap-3 md:flex-row md:gap-10">
+          <motion.div className="flex  flex-col gap-3 md:flex-row md:gap-10">
             <Link
               target="_blank"
               text="Linkedin"
+              
               url="https://www.linkedin.com/in/mohammad-ezzeddin-pratama"
             />
             <Link

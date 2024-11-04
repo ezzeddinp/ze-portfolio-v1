@@ -50,9 +50,9 @@ export default function MobileHeader(): JSX.Element {
         transition={{ duration: 0.3 }}
       >
         <div className="flex-row space-x-3">
-          <div className="mt-1 flex items-center justify-center gap-2">
+          <div className="mt-1 ml-2 flex items-center justify-center gap-2">
             <Link href="/" passHref>
-              <h2 className="font-serif flex-grow whitespace-nowrap text-black dark:text-white/60 text-md font-medium lg:text-xl">.zeddin</h2>
+              <h2 className="font-serif flex-grow whitespace-nowrap text-black dark:text-white/75 text-md font-medium lg:text-xl">.zn</h2>
             </Link>
             {/* <TooltipVerified title="Verified">
               <VerifiedIcon size={18} className="text-blue-400" />

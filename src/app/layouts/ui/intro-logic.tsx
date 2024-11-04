@@ -70,7 +70,7 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
                     initial="hidden"
                     animate={controls}
                     variants={nameVariants}
-                    className="inline-block font-extralight text-[55px] dark:text-zinc-200 text-black"
+                    className="inline-block font-extralight text-[50px] dark:text-zinc-200 text-black"
                   >
                     {letter}
                   </motion.span>

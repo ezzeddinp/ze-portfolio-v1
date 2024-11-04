@@ -14,12 +14,12 @@ export default function Footer() {
     }
 
     return (
-        <section className="relative border-t-[1px] border-white/20 py-8 pt-32 mt-10 lg:pb-10 lg:pt-10 lg:mt-40 px-4 lg:px-14 max-w-full">
+        <section className="relative border-t-[1px] border-white/10 py-8 pt-16 mt-48 lg:pb-10 lg:pt-10 lg:mt-40 px-4 lg:px-14 max-w-full">
             {/* Background Gradient */}
             <div className="relative flex flex-row justify-between items-end gap-4 lg:px-5 px-2">
                 {/* Subheadings and Content */}
                 <SectionSubHeading>
-                    <div className="font-thin text-black dark:text-white/80  flex flex-wrap gap-2 items-center justify-center">
+                    <div className="font-normal text-black dark:text-white/80  flex flex-wrap gap-2 items-center justify-center">
                         <BiSolidUpArrow className='cursor-pointer' size={15} onClick={scrollToTop} />
                         <PiDotOutlineFill />
                         <a className='text-sm lg:text-[15px]' target="_blank" href="https://www.linkedin.com/in/mohammad-ezzeddin-pratama/" rel="noopener noreferrer">LinkedIn</a>

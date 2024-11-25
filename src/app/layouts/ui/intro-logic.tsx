@@ -55,11 +55,11 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
         initial={{ opacity: 0.6 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.05 }}
-        className={`flex relative antialiased flex-col justify-start pt-10 pb-[115px] pl-10 pr-10 md:pt-20 md:pl-10 lg:pl-40 ${className}`}
+        className={`flex relative antialiased flex-col justify-start pt-10 pb-[115px] px-[20px] md:pt-20 md:pl-10 lg:pl-40 ${className}`}
       >
         <>
           <motion.h1
-            className={`${P700.className} font-bold text-transparent text-[45px] md:text-5xl lg:text-6xl pb-[10px] pointer-events-none leading-[50px]`}
+            className={`${P700.className} font-bold text-transparent text-[45px] sm:text-[40px] md:text-5xl lg:text-6xl pb-[10px] pointer-events-none leading-[50px]`}
           >
             {wordsArray.map((word) => (
               <span key={word}>
@@ -70,7 +70,7 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
                     initial="hidden"
                     animate={controls}
                     variants={nameVariants}
-                    className="inline-block font-extralight text-[50px] dark:text-zinc-200 text-black"
+                    className="inline-block font-extralight dark:text-zinc-200 text-black"
                   >
                     {letter}
                   </motion.span>

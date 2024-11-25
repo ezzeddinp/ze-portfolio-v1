@@ -35,12 +35,15 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "*.jsx",
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/edu/page.tsx" // Ensure this path is necessary and correct
-, "src/app/components/IdCard.jsx"  ],
+    ,
+    "src/app/components/IdCard.tsx"
+  ],
   "exclude": [
     "node_modules/**",
-    ".next/**",
+    ".next/**"
   ]
 }

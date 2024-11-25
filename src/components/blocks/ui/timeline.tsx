@@ -38,11 +38,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-xl font-bold md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+        <h2 className="text-2xl font-bold md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
           Certificate <span className="font-normal">n</span> Education
         </h2>
         <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-lg">
-          This program emphasizes both theoretical knowledge and practical skills in web development, mobile applications, and system management. Alongside formal education, I have earned various certificates that further enhance my proficiency in areas like <span className="font-bold">Front-End</span> and <span className="font-bold">Back-End</span> development, enabling me to build comprehensive and efficient digital solutions.
+          This program emphasizes both theoretical knowledge and practical skills in web development, mobile applications, and system management. Alongside formal education, I have earned various certificates that further enhance my <span className="font-bold">proficiency in areas like Front-End</span> and <span className="font-bold">Back-End</span> development, enabling me to build comprehensive and efficient digital solutions.
         </p>
 
       </div>

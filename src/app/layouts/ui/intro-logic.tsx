@@ -90,7 +90,7 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
             <Link
               target="_blank"
               text="Resume"
-              url="/Mohammad Ezzeddin Pratama - Student College _ Full-Stack Developer - CV.pdf"
+              url="/CV ATS 2024 Mohammad Ezzeddin Pratama.pdf"
             />
           </motion.div>
         </>

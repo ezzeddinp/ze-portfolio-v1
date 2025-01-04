@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} overflow-hidden dark:bg-black`}>
         <Analytics />
         <SpeedInsights />
-        <GradientMain>
+        {/* <GradientMain> */}
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
@@ -43,7 +43,7 @@ export default function RootLayout({
               </Suspense>
             </div>
           </ThemeProvider>
-        </GradientMain>
+        {/* </GradientMain> */}
       </body>
     </html>
   );

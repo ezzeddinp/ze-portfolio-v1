@@ -79,6 +79,7 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
               </span>
             ))}
           </motion.h1>
+          {/* // ha */}
           <TextGenerateEffect words={words} />
           <motion.div className="flex  flex-col gap-3 md:flex-row md:gap-10">
             <Link

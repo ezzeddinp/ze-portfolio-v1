@@ -2,117 +2,83 @@ import { SiGithub } from "react-icons/si";
 
 export const cards = [
   {
-    description: "A web marketplace for buying and selling digital products",
+    id: 1,
     title: "Web Marketplace",
-    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379833/webMarketPLace/hero-section_egapra.png",
-    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724380165/sell-product1_uou5lz.png",
-    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379834/webMarketPLace/product-card_vqjoja.png",
-    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724380165/sell-product2_nahobe.png",
-    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379833/webMarketPLace/setting-section_umrvdf.png",
-    sixth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1724379834/webMarketPLace/product-card_vqjoja.png",
-    ctaText: <SiGithub size={20} />,
+    description: "A web marketplace for buying and selling digital products",
+    images: [
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1725065855/webMarketPLace/67d57ed1-21c0-4e9c-8987-75089df69e8b.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1725067416/webMarketPLace/92793e9c-60e0-4731-8318-6703c63e846f.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1725066302/webMarketPLace/c9b3775d-aaff-418c-8978-e1ca23dfedbe.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1725066781/webMarketPLace/05ef3d09-7f75-402c-ba7e-9b114afb2673.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1725067203/webMarketPLace/4f703d80-e73f-45ba-9bf8-8b1372de4589.png",
+    ],
     ctaLink: "https://github.com/user/web-marketplace",
-    content: () => {
-      return (
-        <p>
-          Our Web Marketplace is a cutting-edge platform for buying and selling digital products. It uses <strong>Next.js</strong> for a smooth frontend experience and <strong>Node.js</strong> for backend operations. We ensure data integrity with <strong>Zod</strong> and manage data efficiently with <strong>Prisma</strong>.
-
-          For real-time updates and authentication, we use <strong>Supabase</strong>. <strong>Uploadthing</strong> handles file uploads and storage, while <strong>Kinde</strong> manages user authentication. Payments are processed securely via <strong>Stripe</strong>.
-
-          The platform offers an intuitive interface for product browsing, order management, and secure transactions, supporting various payment methods and effective user profile management.
-        </p>
-
-      );
-    },
+    ctaText: <SiGithub size={20} />,
     role: "Full Stack Developer",
     collaborators: "-",
     duration: "August 2024",
-    tools: "NextJs, Node.js,Zod, Prisma, Supabase, Uploadthing, Kinde, Stripe",
+    tools: "NextJs, Node.js, Zod, Prisma, Supabase, Uploadthing, Kinde, Stripe",
+    content: () => (
+      <p>
+        Web Marketplace is a platform for buying and selling digital products.
+        It uses Next.js for a smooth frontend experience and Node.js for backend
+        operations. Data integrity with Zod and efficient management with
+        Prisma. The platform offers real-time updates, authentication, intuitive
+        UI for browsing, order management, secure transactions, and profile
+        features.
+      </p>
+    ),
   },
   {
-    description: "Fullstack Project",
+    id: 2,
     title: "E-commerce Store",
-    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334003/ecommerce-store-highlight/apakek_bvxdig.png",
-    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723337070/ecommerce-store-highlight/dark_banner.png",
-    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334002/ecommerce-store-highlight/small-view_hrva67.png",
-    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334001/ecommerce-store-highlight/cart-checkout_frzppi.png",
-    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334001/ecommerce-store-highlight/darkmode_f39rix.png",
-    sixth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723337070/ecommerce-store-highlight/detail_product.png",
-    ctaText: <SiGithub size={20} />,
+    description: "Fullstack Project",
+    images: [
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334003/ecommerce-store-highlight/apakek_bvxdig.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723337070/ecommerce-store-highlight/dark_banner.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334002/ecommerce-store-highlight/small-view_hrva67.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334001/ecommerce-store-highlight/cart-checkout_frzppi.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723334001/ecommerce-store-highlight/darkmode_f39rix.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723337070/ecommerce-store-highlight/detail_product.png",
+    ],
     ctaLink: "https://github.com/ezzeddinp/ecommerce-store",
+    ctaText: <SiGithub size={20} />,
     ctaDescriptionLink: "ecommerce-store",
-    content: () => {
-      return (
-        <p>
-          This is my first project. It&apos;s a full-stack E-commerce store with authentication. Its data are connected in my ecommerce-dashboard that i build too.
-        </p>
-      );
-    },
     role: "Full Stack Developer",
     collaborators: "-",
     duration: "July 2023 - Sept 2023",
     tools: "MongoDB, CMS, Nextjs, Typescript, TailwindCSS, Stripe, Prisma",
+    content: () => (
+      <p>
+        This is my first project. It&apos;s a full-stack E-commerce store with
+        authentication. Its data are connected in my ecommerce-dashboard that I
+        built too.
+      </p>
+    ),
   },
   {
-    description: "A web application for manage tasks",
+    id: 3,
     title: "Productivity Web UI",
-    src: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723963518/Black_White_Minimalist_Elegant_Photographer_Portofolio_Presentation_qinb5x.png",
-    second: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_180548_d5nwnx.png",
-    third: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181210_zva3nl.png",
-    fourth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181850_z32oai.png",
-    fifth: "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181149_vhblaj.png",
-
-    ctaText: <SiGithub size={20} />,
+    description: "A web application for managing tasks",
+    images: [
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723963518/Black_White_Minimalist_Elegant_Photographer_Portofolio_Presentation_qinb5x.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_180548_d5nwnx.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181210_zva3nl.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181850_z32oai.png",
+      "https://res.cloudinary.com/dm09trh2m/image/upload/v1723961183/ecommerce-store-highlight/swift-launch/Screenshot_2024-08-07_181149_vhblaj.png",
+    ],
     ctaLink: "https://github.com/ezzeddinp/swift-launch-web-ui",
+    ctaText: <SiGithub size={20} />,
     ctaDescriptionLink: "Swift Launch",
-    content: () => {
-      return (
-        <p>
-          <i>Swift Launch</i> is a web application that allows users to manage their tasks also share, calculate and share common links.
-        </p>
-      );
-    },
     role: "Frontend",
     collaborators: "-",
     duration: "Aug 2024",
     tools: "Nextjs, Typescript, TailwindCSS",
+    content: () => (
+      <p>
+        <i>Swift Launch</i> is a web application that allows users to manage
+        their tasks, calculate, and share common links.
+      </p>
+    ),
   },
-
-
-  // {
-  //   description: "A mobile app for real-time public transport tracking",
-  //   title: "Transit Tracker",
-  //   src: "/disto.jpg",
-  //   ctaText: <SiGithub size={20} />,
-  //   ctaLink: "https://github.com/user/transit-tracker",
-  //   content: () => {
-  //     return (
-  //       <p>
-  //         Transit Tracker is a mobile application that provides real-time tracking of public transport vehicles. Users can see the current location of buses and trains, get arrival predictions, and plan their routes accordingly.
-  //       </p>
-  //     );
-  //   },
-  //   role: "Backend Developer",
-  //   collaborators: "Alice Johnson, Bob Brown",
-  //   duration: "Mar 2020 - Dec 2020",
-  //   tools: "Node.js, Express, MongoDB",
-  // },
-  // {
-  //   description: "An AI-powered chatbot for customer support",
-  //   title: "SupportBot",
-  //   src: "/distorsi.jpg",
-  //   ctaText: <SiGithub size={20} />,
-  //   ctaLink: "https://github.com/user/supportbot",
-  //   content: () => {
-  //     return (
-  //       <p>
-  //         SupportBot is an AI-powered chatbot that helps businesses provide 24/7 customer support. It uses natural language processing to understand customer queries and provide accurate responses.
-  //       </p>
-  //     );
-  //   },
-  //   role: "Machine Learning Engineer",
-  //   collaborators: "Grace Lee, Henry Martin",
-  //   duration: "Feb 2017 - Aug 2017",
-  //   tools: "TensorFlow, Keras, NLTK",
-  // },
 ];

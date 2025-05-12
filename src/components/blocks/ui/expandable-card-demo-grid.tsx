@@ -1,11 +1,10 @@
-"use client"
+"use client";
 import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useOutsideClick } from "../../../../hooks/useOutsideClick";
 import { cards } from "./expandable-card-data";
 import { notFound, useRouter } from "next/navigation";
-import supabase from "../../../../utils/supabase";
 import {
   SiExpo,
   SiGithub,
@@ -17,34 +16,40 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiPrisma,
-  SiMongodb
-} from 'react-icons/si';
+  SiMongodb,
+} from "react-icons/si";
 import { FaJava, FaStripe } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 
-const iconSize = '25px';
+const iconSize = "25px";
 const toolsIcon: Record<string, JSX.Element> = {
   github: <SiGithub size={20} />,
   JavaScript: <SiJavascript size={iconSize} className="text-yellow-400" />,
   TypeScript: <SiTypescript size={iconSize} className="text-blue-400" />,
-  NextJs: <SiNextdotjs size={iconSize} className='text-black dark:text-white' />,
+  NextJs: (
+    <SiNextdotjs size={iconSize} className="text-black dark:text-white" />
+  ),
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
-  'React Native': <SiReact size={iconSize} className="text-sky-600" />,
+  "React Native": <SiReact size={iconSize} className="text-sky-600" />,
   NodeJs: <SiNodedotjs size={iconSize} className="text-green-600" />,
   Github: <SiGithub size={iconSize} className="text-black dark:text-white" />,
-  Java: <FaJava size={iconSize} className='dark:text-white text-orange-800' />,
-  MySQL: <GrMysql size={iconSize} className=' text-blue-600' />,
+  Java: <FaJava size={iconSize} className="dark:text-white text-orange-800" />,
+  MySQL: <GrMysql size={iconSize} className=" text-blue-600" />,
   Supabase: <SiSupabase size={iconSize} className="text-green-600" />,
   MongoDB: <SiMongodb size={iconSize} className="text-green-600" />,
   Prisma: <SiPrisma size={iconSize} className="text-black dark:text-white" />,
   Expo: <SiExpo size={iconSize} className="text-black dark:text-white" />,
-  Stripe: <FaStripe size={30} className="text-purple-600 dark:text-purple-900" />
-}
+  Stripe: (
+    <FaStripe size={30} className="text-purple-600 dark:text-purple-900" />
+  ),
+};
 
 export default function ExpandableCardCardDemo() {
-  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(null);
+  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
+    null
+  );
   const [project, setProject] = useState<any[]>([]);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
@@ -52,19 +57,8 @@ export default function ExpandableCardCardDemo() {
 
   useEffect(() => {
     // Fetch project data from Supabase
-    const fetchProjectData = async () => {
-      const { data, error } = await supabase
-        .from('project')
-        .select('*')
-        .order("id");
-      if (error) {
-        console.error("Error fetching projects:", error);
-        return notFound();
-      }
-      setProject(data);
-    };
 
-    fetchProjectData();
+    setProject(cards);
   }, []);
 
   useEffect(() => {
@@ -83,7 +77,7 @@ export default function ExpandableCardCardDemo() {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
-  
+
   useOutsideClick(ref, () => setActive(null));
 
   if (!project) return notFound();
@@ -117,7 +111,7 @@ export default function ExpandableCardCardDemo() {
                   <Image
                     width={390}
                     height={200}
-                    src={card.images[0]}  // Show the first image only
+                    src={card.images[0]} // Show the first image only
                     alt={`${card.title} - main image`}
                     placeholder="blur"
                     blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
@@ -142,20 +136,25 @@ export default function ExpandableCardCardDemo() {
                 </div>
                 <div className="flex flex-col gap-2 pt-6">
                   <div className="flex flex-wrap gap-2 items-center">
-                    {card.tools && card.tools.split(',').map((tool: string, index: string) => (
-                      <span
-                        key={index}
-                        className="px-1 text-neutral-800 dark:text-neutral-300 lg:py-1 rounded-md text-xs font-medium dark:font-semibold"
-                      >
-                        {toolsIcon[tool.trim()] ? toolsIcon[tool.trim()] : tool.trim()}
-                      </span>
-                    ))}
+                    {card.tools &&
+                      card.tools
+                        .split(",")
+                        .map((tool: string, index: string) => (
+                          <span
+                            key={index}
+                            className="px-1 text-neutral-800 dark:text-neutral-300 lg:py-1 rounded-md text-xs font-medium dark:font-semibold"
+                          >
+                            {toolsIcon[tool.trim()]
+                              ? toolsIcon[tool.trim()]
+                              : tool.trim()}
+                          </span>
+                        ))}
                   </div>
                   <div className="flex items-start justify-start py-4 px-2 lg:px-0">
                     <motion.button
                       layoutId={`button-${card.title}-${id}`}
                       className="w-fit py-2 px-4 text-sm rounded-full font-bold bg-black text-white hover:bg-black/80 dark:bg-gray-100 dark:text-black dark:hover:bg-gray-300 hover:duration-200"
-                      onClick={() => window.open(card.ctaLink, '_blank')}
+                      onClick={() => window.open(card.ctaLictaLink, "_blank")}
                     >
                       {toolsIcon.github}
                     </motion.button>
@@ -184,7 +183,6 @@ export default function ExpandableCardCardDemo() {
           </motion.div>
         ))}
       </ul>
-
     </>
   );
 }

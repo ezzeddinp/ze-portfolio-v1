@@ -17,8 +17,9 @@ import {
   SiTypescript,
   SiPrisma,
   SiMongodb,
+  SiJquery
 } from "react-icons/si";
-import { FaJava, FaStripe } from "react-icons/fa";
+import { FaCss3Alt, FaHtml5, FaJava, FaStripe } from "react-icons/fa";
 import { GrMysql } from "react-icons/gr";
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
@@ -32,6 +33,9 @@ const toolsIcon: Record<string, JSX.Element> = {
     <SiNextdotjs size={iconSize} className="text-black dark:text-white" />
   ),
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
+  Html: <FaHtml5  size={iconSize} className="text-orange-400" />,
+  Css: <FaCss3Alt size={iconSize} className="text-blue-600" />,
+  jQuery: <SiJquery   size={iconSize} className="text-orange-400" />,
   "React Native": <SiReact size={iconSize} className="text-sky-600" />,
   NodeJs: <SiNodedotjs size={iconSize} className="text-green-600" />,
   Github: <SiGithub size={iconSize} className="text-black dark:text-white" />,
@@ -55,10 +59,17 @@ export default function ExpandableCardCardDemo() {
   const id = useId();
   const router = useRouter();
 
-  useEffect(() => {
-    // Fetch project data from Supabase
+    const shuffleArray = (array: any[]) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
 
-    setProject(cards);
+  useEffect(() => {
+    const randomizedCards = shuffleArray([...cards]);
+    setProject(randomizedCards);
   }, []);
 
   useEffect(() => {
@@ -116,6 +127,7 @@ export default function ExpandableCardCardDemo() {
                     placeholder="blur"
                     blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
                     className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
+                    
                   />
                 </motion.div>
               )}

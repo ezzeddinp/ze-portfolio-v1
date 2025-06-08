@@ -1,4 +1,12 @@
 import { SiGithub } from "react-icons/si";
+import cgroovyImg from "@/images/cgroovy.png";
+import cgroovyImg2 from "@/images/cgroovy2.png";
+import cgroovyImg3 from "@/images/cgroovy3.png";
+
+import sushi from "@/images/sushi.png";
+import reservation from "@/images/reservation.png";
+import menu from "@/images/menu.png";
+import contactus from "@/images/contact-us.png";
 
 export const cards = [
   {
@@ -17,11 +25,11 @@ export const cards = [
     role: "Full Stack Developer",
     collaborators: "-",
     duration: "August 2024",
-    tools: "NextJs, Node.js, Zod, Prisma, Supabase, Uploadthing, Kinde, Stripe",
+    tools: "NextJs, NodeJs, Zod, Prisma, Supabase, Uploadthing, Kinde, Stripe",
     content: () => (
       <p>
         Web Marketplace is a platform for buying and selling digital products.
-        It uses Next.js for a smooth frontend experience and Node.js for backend
+        It uses Next.js for a smooth frontend experience and NodeJs for backend
         operations. Data integrity with Zod and efficient management with
         Prisma. The platform offers real-time updates, authentication, intuitive
         UI for browsing, order management, secure transactions, and profile
@@ -47,7 +55,7 @@ export const cards = [
     role: "Full Stack Developer",
     collaborators: "-",
     duration: "July 2023 - Sept 2023",
-    tools: "MongoDB, CMS, Nextjs, Typescript, TailwindCSS, Stripe, Prisma",
+    tools: "MongoDB, CMS, NextJs, TypeScript, TailwindCSS, Stripe, Prisma",
     content: () => (
       <p>
         This is my first project. It&apos;s a full-stack E-commerce store with
@@ -73,11 +81,47 @@ export const cards = [
     role: "Frontend",
     collaborators: "-",
     duration: "Aug 2024",
-    tools: "Nextjs, Typescript, TailwindCSS",
+    tools: "NextJs, TypeScript, TailwindCSS",
     content: () => (
       <p>
         <i>Swift Launch</i> is a web application that allows users to manage
         their tasks, calculate, and share common links.
+      </p>
+    ),
+  },
+  {
+    id: 4,
+    title: "C`Groovy",
+    description: "A Website to listening some memories",
+    images: [cgroovyImg.src, cgroovyImg2.src, cgroovyImg3.src],
+    ctaLink: "https://github.com/user/",
+    ctaText: <SiGithub size={20} />,
+    ctaDescriptionLink: "C`Groovy",
+    role: "Front End Developer",
+    collaborators: "-",
+    duration: "May 2025",
+    tools: "Html, Css,JavaScript, jQuery",
+    content: () => (
+      <p>
+        C`Groovy is a nostalgic music website that lets users explore and listen to memorable songs. It features a simple, retro-inspired interface built with HTML, CSS, and jQuery, allowing users to browse and play their favorite tracks from the past.
+      </p>
+    ),
+  },
+  {
+    id: 5,
+    title: "SushiBox",
+    description: "Find & Order your fav Sushi",
+    images: [sushi.src, reservation.src, menu.src, contactus.src],
+    ctaLink: "https://github.com/user/",
+    ctaText: <SiGithub size={20} />,
+    ctaDescriptionLink: "C`Groovy",
+    role: "Front End Developer",
+    collaborators: "-",
+    duration: "May 2024",
+    tools: "Html, Css, JavaScript",
+    content: () => (
+      <p>
+        SushiBox is an elegant dining platform where sushi enthusiasts can discover their favorite Japanese dishes. The website offers seamless table reservations, an extensive interactive menu of fresh sushi options, and easy access to contact information for inquiries or special requests. Built with a modern interface, it simplifies the dining experience from browsing to booking.
       </p>
     ),
   },

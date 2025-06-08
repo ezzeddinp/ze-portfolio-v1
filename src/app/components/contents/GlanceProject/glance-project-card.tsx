@@ -141,7 +141,7 @@ const GlanceProject: React.FC = () => {
           />
           <AnimatedSectionSubHeading>
             <p className="mb-[16px] text-md text-neutral-600 dark:text-neutral-400">
-              Small Github Projects
+              More of Project
             </p>
           </AnimatedSectionSubHeading>
         </div>

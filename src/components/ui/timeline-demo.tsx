@@ -3,6 +3,25 @@ import { Timeline } from "@/components/blocks/ui/timeline";
 
 export function TimelineDemo() {
   const data = [
+        {
+      title: "2025",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-semibold py-2">
+            JPMorgan Chase & Co - Software Engineering Job Simulation
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-300 text-xs md:text-sm font-normal py-1">
+            Forage | Jan 2025
+          </p>
+          <p className="text-neutral-800 dark:text-neutral-500 text-xs md:text-sm font-normal py-2">
+            ID Kredensial: 4EXGQRKDGZRL | Keahlian: Apache Kafka · Spring Boot · REST API
+          </p>
+
+          <div className="border-t border-neutral-800 dark:border-neutral-200 my-4" />
+
+        </div>
+      ),
+    },
     {
       title: "2024",
       content: (

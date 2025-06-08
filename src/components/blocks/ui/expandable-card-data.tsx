@@ -117,7 +117,7 @@ export const cards = [
     ctaDescriptionLink: "C`Groovy",
     role: "Front End Developer",
     collaborators: "-",
-    duration: "May 2024",
+    duration: "June 2025",
     tools: "Html, Css, JavaScript",
     content: () => (
       <p>

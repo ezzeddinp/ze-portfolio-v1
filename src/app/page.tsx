@@ -14,7 +14,7 @@ const ProjectPage: React.FC = () => {
       <Container>
         <SkillMain />
         <ExpandableCardMain />
-        <Content />
+        {/* <Content /> */}
         <Footer />
       </Container>
     </main>

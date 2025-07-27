@@ -8,6 +8,30 @@ import reservation from "@/images/reservation.png";
 import menu from "@/images/menu.png";
 import contactus from "@/images/contact-us.png";
 
+import parfume1 from "@/images/project/1.png";
+import parfume2 from "@/images/project/2.png";
+import parfume3 from "@/images/project/3.png";
+import parfume4 from "@/images/project/4.png";
+import parfume5 from "@/images/project/5.png";
+import parfume6 from "@/images/project/6.png";
+import parfume7 from "@/images/project/7.png";
+import parfume8 from "@/images/project/8.png";
+import parfume9 from "@/images/project/9.png";
+import parfume10 from "@/images/project/10.png";
+
+const parfumeImages = [
+  parfume1.src,
+  parfume2.src,
+  parfume3.src,
+  parfume4.src,
+  parfume5.src,
+  parfume6.src,
+  parfume7.src,
+  parfume8.src,
+  parfume9.src,
+  parfume10.src,
+];
+
 export const cards = [
   {
     id: 1,
@@ -125,4 +149,24 @@ export const cards = [
       </p>
     ),
   },
+  {
+        id: 6,
+    title: "Parfume AI",
+    description: "Find your recommendation parfume personalized by AI",
+    images: parfumeImages,
+    ctaLink:"https://github.com/user/",
+    ctaText: <SiGithub size={20} />,
+    ctaDescriptionLink: "PerfumeAI",
+    role: "Fullstack Developer",
+    collaborators: "-",
+    duration: "July 2025",
+    tools: "NextJs, TypeScript, TailwindCSS, Supabase, Midtrans, Gemini AI",
+    content: () => (
+      <p>
+        PerfumeAI is a modern, AI-powered perfume discovery web app built with Next.js, TypeScript, Supabase and Midtrans payment gateway.
+It features a seamless chat experience using Google Gemini for real-time fragrance recommendations, a beautiful and responsive UI with Framer Motion animations, and a secure order history system.
+The project demonstrates advanced integration of generative AI, scalable cloud authentication, and a delightful user experience—showcasing both technical depth and product polish.
+      </p>
+    ),
+  }
 ];

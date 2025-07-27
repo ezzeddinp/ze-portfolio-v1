@@ -48,6 +48,22 @@ const toolsIcon: Record<string, JSX.Element> = {
   Stripe: (
     <FaStripe size={30} className="text-purple-600 dark:text-purple-900" />
   ),
+  "Gemini AI": (
+    <Image 
+      src="/gemini.png"
+      alt="Gemini"
+      width={50}
+      height={50} 
+    />
+  ),
+  Midtrans : (
+    <Image 
+      src="/Midtrans.png"
+      alt="Midtrans"
+      width={85}
+      height={85}
+      />
+    ),
 };
 
 export default function ExpandableCardCardDemo() {
@@ -59,17 +75,10 @@ export default function ExpandableCardCardDemo() {
   const id = useId();
   const router = useRouter();
 
-    const shuffleArray = (array: any[]) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  };
 
   useEffect(() => {
-    const randomizedCards = shuffleArray([...cards]);
-    setProject(randomizedCards);
+      const sortedCards = [...cards].sort((a, b) => b.id - a.id);
+  setProject(sortedCards);
   }, []);
 
   useEffect(() => {

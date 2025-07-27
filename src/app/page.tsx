@@ -5,7 +5,6 @@ import Footer from './components/Footer/footer';
 import ExpandableCardMain from '@/components/blocks/page';
 import SkillMain from '@/home/page';
 import IntroMain from './layouts/page';
-// import clsxm from '@/common/libs/clsxm';
 
 const ProjectPage: React.FC = () => {
   return (

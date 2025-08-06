@@ -19,6 +19,17 @@ import parfume8 from "@/images/project/8.png";
 import parfume9 from "@/images/project/9.png";
 import parfume10 from "@/images/project/10.png";
 
+import agentia1 from "@/images/project/agentia-image/1.png";
+import agentia2 from "@/images/project/agentia-image/2.png";
+import agentia3 from "@/images/project/agentia-image/3.png";
+import agentia4 from "@/images/project/agentia-image/4.png";
+import agentia5 from "@/images/project/agentia-image/5.png";
+import agentia6 from "@/images/project/agentia-image/6.png";
+import agentia7 from "@/images/project/agentia-image/7.png";
+import agentia8 from "@/images/project/agentia-image/8.png";
+import agentia9 from "@/images/project/agentia-image/9.png";
+import agentia10 from "@/images/project/agentia-image/10.png";
+
 const parfumeImages = [
   parfume1.src,
   parfume2.src,
@@ -30,6 +41,19 @@ const parfumeImages = [
   parfume8.src,
   parfume9.src,
   parfume10.src,
+];
+
+const agentiaImages = [
+  agentia1.src,
+  agentia2.src,
+  agentia3.src,
+  agentia4.src,
+  agentia5.src,
+  agentia6.src,
+  agentia7.src,
+  agentia8.src,
+  agentia9.src,
+  agentia10.src,
 ];
 
 export const cards = [
@@ -122,7 +146,7 @@ export const cards = [
     ctaText: <SiGithub size={20} />,
     ctaDescriptionLink: "C`Groovy",
     role: "Front End Developer",
-    collaborators: "-",
+    collaborators: "Giancarla, Ahaddin, Faiz, Aditya, Fayruz",
     duration: "May 2025",
     tools: "Html, Css,JavaScript, jQuery",
     content: () => (
@@ -154,7 +178,7 @@ export const cards = [
     title: "Parfume AI",
     description: "Find your recommendation parfume personalized by AI",
     images: parfumeImages,
-    ctaLink:"https://github.com/user/",
+    ctaLink:"https://github.com/ezzeddinp/",
     ctaText: <SiGithub size={20} />,
     ctaDescriptionLink: "PerfumeAI",
     role: "Fullstack Developer",
@@ -164,8 +188,28 @@ export const cards = [
     content: () => (
       <p>
         PerfumeAI is a modern, AI-powered perfume discovery web app built with Next.js, TypeScript, Supabase and Midtrans payment gateway.
-It features a seamless chat experience using Google Gemini for real-time fragrance recommendations, a beautiful and responsive UI with Framer Motion animations, and a secure order history system.
-The project demonstrates advanced integration of generative AI, scalable cloud authentication, and a delightful user experience—showcasing both technical depth and product polish.
+  It features a seamless chat experience using Google Gemini for real-time fragrance recommendations, a beautiful and responsive UI with Framer Motion animations, and a secure order history system.
+  The project demonstrates advanced integration of generative AI, scalable cloud authentication, and a delightful user experience—showcasing both technical depth and product polish.
+      </p>
+    ),
+  },
+  {
+        id: 7,
+    title: "Agentia",
+    description: "Find your personalized agent bot template",
+    images: agentiaImages,
+    ctaLink:"https://github.com/ezzeddinp/",
+    ctaText: <SiGithub size={20} />,
+    ctaDescriptionLink: "PerfumeAI",
+    role: "Frontend Developer",
+    collaborators: "-",
+    duration: "July 2025 - Aug 2025",
+    tools: "NextJs, TypeScript, TailwindCSS",
+    content: () => (
+      <p>
+        Agentia help UMKM people to get an efficient and effective way by automating their daily operational via
+ whatsapp bot that integrated with n8n such as, customer center, ai chatbot , daily report for the owner of
+ UMKM
       </p>
     ),
   }

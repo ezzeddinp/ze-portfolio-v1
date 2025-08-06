@@ -196,7 +196,7 @@ export const cards = [
     images: agentiaImages,
     ctaLink:"https://github.com/ezzeddinp/",
     ctaText: <SiGithub size={20} />,
-    ctaDescriptionLink: "PerfumeAI",
+    ctaDescriptionLink: "Agentia",
     role: "Frontend Developer",
     collaborators: "-",
     duration: "July 2025 - Aug 2025",

@@ -27,8 +27,6 @@ import agentia5 from "@/images/project/agentia-image/5.png";
 import agentia6 from "@/images/project/agentia-image/6.png";
 import agentia7 from "@/images/project/agentia-image/7.png";
 import agentia8 from "@/images/project/agentia-image/8.png";
-import agentia9 from "@/images/project/agentia-image/9.png";
-import agentia10 from "@/images/project/agentia-image/10.png";
 
 const parfumeImages = [
   parfume1.src,
@@ -52,8 +50,6 @@ const agentiaImages = [
   agentia6.src,
   agentia7.src,
   agentia8.src,
-  agentia9.src,
-  agentia10.src,
 ];
 
 export const cards = [

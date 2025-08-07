@@ -102,6 +102,23 @@ export default function ExpandableCardCardDemo() {
 
   if (!project) return notFound();
 
+  // Add this function before the return statement
+const getCardGradient = (index: number) => {
+  // Array of glass-like gradient combinations
+  const gradients = [
+    "from-green-500/5 via-green-400/5 to-transparent dark:from-green-400/30 dark:via-green-900/20 dark:to-black/80",
+    "from-blue-500/5 via-blue-400/5 to-transparent dark:from-blue-700/30 dark:via-blue-900/20 dark:to-black/80",
+    "from-orange-500/5 via-orange-400/5 to-transparent dark:from-orange-500/30 dark:via-orange-700/20 dark:to-black/80",
+    "from-blue-500/5 via-blue-400/5 to-transparent dark:from-blue-700/30 dark:via-blue-900/20 dark:to-black/80",
+    "from-amber-500/5 via-amber-400/5 to-transparent dark:from-amber-700/30 dark:via-amber-900/20 dark:to-black/80",
+    "from-white-500/5 via-white-400/5 to-transparent dark:from-white/20 dark:via-white/5 dark:to-black/80",
+    "from-red-500/5 via-red-400/5 to-transparent dark:from-cyan-700/30 dark:via-cyan-900/20 dark:to-black/80",
+  ];
+  
+  // Return gradient based on index, cycling through the array
+  return gradients[index % gradients.length];
+};
+
   return (
     <>
       <div className="space-y-2 pt-20 lg:pt-32">
@@ -117,13 +134,19 @@ export default function ExpandableCardCardDemo() {
       </div>
       {/* Cards */}
       <ul className="scrollbar-hide max-w-[390px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 pb-20 pt-5 lg:pt-16 lg:pb-32">
-        {project.map((card) => (
-          <motion.div
-            layoutId={`card-${card.title}-${id}`}
-            key={`card-${card.title}-${id}`}
-            onClick={() => router.push(`/experience-detail/${card.title}`)}
-            className="snap-center lg:snap-none shadow-md hover:shadow-lg hover:duration-500 p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between items-center bg-neutral-50 dark:bg-black/20 dark:hover:bg-gradient-to-tl dark:hover:from-neutral-900/15 lg:dark:hover:from-neutral-900/20 dark:hover:via-neutral-900/10 dark:hover:to-neutral-900/10 dark:hover:scale-100 dark:hover:shadow-md dark:hover:shadow-neutral-700/95 transition-all duration-300 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]"
-          >
+        {project.map((card, index) => (
+  <motion.div
+    layoutId={`card-${card.title}-${id}`}
+    key={`card-${card.title}-${id}`}
+    onClick={() => router.push(`/experience-detail/${card.title}`)}
+    className={`snap-center lg:snap-none shadow-lg backdrop-blur-md 
+    p-2 pb-3 md:pb-2 lg:pb-2 flex flex-col md:flex-row justify-between 
+    items-center bg-gradient-to-br 
+    ${getCardGradient(index)}
+    hover:bg-gradient-to-tl hover:shadow-xl
+    border border-white/30 dark:border-white/10
+    transition-all duration-300 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]`}
+  >
             <div className="flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
               {/* Show only the first image initially */}
               {card.images && card.images.length > 0 && (

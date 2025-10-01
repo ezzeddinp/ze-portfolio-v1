@@ -96,12 +96,9 @@ export default function BlogCard({
         )}
       >
         {visibleTags.length > 0 && (
-              <div className="flex flex-wrap gap-2 text-[0.65rem] font-semibold uppercase tracking-wide text-neutral-600 dark:text-white">
+          <div className="flex flex-wrap gap-1.5 text-[0.65rem] font-medium uppercase tracking-wide text-neutral-500 dark:text-neutral-300">
             {visibleTags.map(tag => (
-              <span
-                key={`${id}-${tag}`}
-                   className="rounded-full border border-neutral-200/80 bg-neutral-100 px-2.5 py-1 text-[0.65rem] text-neutral-700 shadow-sm dark:border-white/20 dark:bg-white/10 dark:text-white"
-              >
+              <span key={`${id}-${tag}`} className="text-current pr-2 last:pr-0">
                 #{tag}
               </span>
             ))}

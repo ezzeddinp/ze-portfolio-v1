@@ -110,6 +110,26 @@ module.exports = {
             transform: "translateY(-50%)",
           },
         },
+        shine: {
+          "0%": {
+            transform: "translateX(-120%)",
+            opacity: 0,
+          },
+          "30%": {
+            opacity: 0.35,
+          },
+          "50%": {
+            transform: "translateX(0%)",
+            opacity: 0.5,
+          },
+          "70%": {
+            opacity: 0.35,
+          },
+          "100%": {
+            transform: "translateX(120%)",
+            opacity: 0,
+          },
+        },
       },
       // animation: {
       //   "accordion-down": "accordion-down 0.2s ease-out",
@@ -125,6 +145,7 @@ module.exports = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
+        shine: "shine 8.5s ease-in-out infinite",
       },
     },
   },

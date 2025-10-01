@@ -1,10 +1,11 @@
 'use client'
 
-import React, {  useState } from "react";
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { cn } from "../../lib/utils";
 import { ModeToggle } from "../theme-toggle";
+import NewBadge from "@/common/components/elements/NewBadge";
 // import Logo from "../Header/Logo";
 
 export default function MainNav({
@@ -14,7 +15,7 @@ export default function MainNav({
 	const pathname = usePathname();
 	const params = useParams();
 
-	const routes = [
+	const routes = useMemo(() => ([
 		{
 			href: `/`,
 			label: "Home",
@@ -24,13 +25,14 @@ export default function MainNav({
 			href: '/blog',
 			label: "Blog",
 			active: pathname === `/${params.storeNav}/blogs`,
+			badge: "Blog updates",
 		},
 		{
 			href: '/edu',
 			label: "Education",
 			active: pathname === `/${params.storeNav}/listofposts`,
 		},
-	];
+	]), [params.storeNav, pathname]);
 
 	const [click, setClick] = useState(false);
 
@@ -85,7 +87,12 @@ export default function MainNav({
 								route.active ? "text-white dark:text-black" : "text-neutral-400"
 							)}
 						>
-							{route.label}
+							<span className="flex items-center gap-1">
+								{route.label}
+								{route.badge && route.label === "Blog" && (
+									<NewBadge label={route.badge} />
+								)}
+							</span>
 						</Link>
 					))}
 

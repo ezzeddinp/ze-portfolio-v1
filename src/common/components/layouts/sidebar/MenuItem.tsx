@@ -9,8 +9,9 @@ import { BsArrowRightShort as ExternalLinkIcon } from 'react-icons/bs'
 import { MenuItemProps } from '@/types/menu'
 
 import { useMenu } from '../../../../../stores/menu'
+import NewBadge from '../../elements/NewBadge'
 
-export default function MenuItem({ title, href, icon, onClick, className = '', children, isHover }: MenuItemProps) {
+export default function MenuItem({ title, href, icon, onClick, className = '', children, isHover, badge }: MenuItemProps) {
   const [isHovered, setIsHovered] = useState(false)
   const { hideMenu } = useMenu()
   const isExternalUrl = href?.includes('http')
@@ -50,14 +51,17 @@ export default function MenuItem({ title, href, icon, onClick, className = '', c
         <div>
           {icon}
         </div>
-        {
-          isHover &&
-          <div className="ml-1 animate-enter-left whitespace-nowrap text-2xl delay-500">
-            {title}
+        {isHover && (
+          <div className="ml-1 flex items-center gap-2 whitespace-nowrap text-2xl animate-enter-left delay-500">
+            <span>{title}</span>
+            {badge && <NewBadge label={badge} />}
           </div>
-        }
+        )}
         <div className="flex-grow lg:hidden">
-          {title}
+          <div className="flex items-center justify-between gap-2 text-base font-medium">
+            <span>{title}</span>
+            {badge && <NewBadge label={badge} />}
+          </div>
         </div>
         {
           children &&

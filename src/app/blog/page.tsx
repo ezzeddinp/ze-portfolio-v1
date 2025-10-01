@@ -20,6 +20,7 @@ export const metadata: Metadata = {
 const PAGE_TITLE = 'Blog'
 const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant learning.'
 
+
 export default async function BlogPage() {
   return (
     <>

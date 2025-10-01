@@ -34,7 +34,8 @@ export const MENU_ITEMS: MenuItemProps[] = [
     icon: <BlogIcon size={iconSize} />,
     isShow: true,
     isExternal: false,
-    eventName: 'Pages: Blog'
+    eventName: 'Pages: Blog',
+    badge: 'Blog updates'
   },
   {
     title: 'Education',

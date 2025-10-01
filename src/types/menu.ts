@@ -12,4 +12,5 @@ export type MenuItemProps = {
   eventName?: string
   backgroundColor?: string
   isHover?: boolean
+  badge?: string
 }

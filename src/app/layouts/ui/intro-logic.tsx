@@ -91,7 +91,7 @@ function IntroLogic({ className }: { className?: string }): React.JSX.Element {
             <Link
               target="_blank"
               text="Resume"
-              url="/CV ATS 2025 Mohammad Ezzeddin Pratama.pdf"
+              url="/CV ATS Mohammad Ezzeddin Pratama.pdf"
             />
           </motion.div>
         </>

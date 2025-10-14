@@ -8,14 +8,40 @@ import clsxm from '@/common/libs/clsxm'
 import Blog from '../../../modules/blog'
 import Footer from '../components/Footer/footer'
 
-export const metadata: Metadata = {
-  title: `Blog ${METADATA.exTitle}`,
-  description: 'My blogs content about programming and software development',
-  keywords: 'blog zeddin, zeddin',
-  alternates: {
-    canonical: `${process.env.DOMAIN}/blog`
-  }
+export const metadata = {
+  title: "Mohammad Ezzeddin Pratama | Full-Stack Developer",
+  description:
+    "Portfolio of Mohammad Ezzeddin Pratama — a full-stack developer specializing in React, Next.js, and Supabase. Passionate about building impactful web and mobile apps.",
+  keywords: [
+    "Mohammad Ezzeddin Pratama",
+    "Mohammad Mohammad Ezzeddin Pratama",
+    "Ezzeddin",
+    "Ezzeddin Portofolio",
+    "Full-stack developer",
+    "Next.js portfolio",
+    "React developer",
+    "Indonesia developer",
+    "Supabase projects",
+    "React Native"
+  ],
+  authors: [{ name: "Mohammad Ezzeddin Pratama" }],
+  openGraph: {
+    title: "Mohammad Ezzeddin Pratama | Full-Stack Developer",
+    description:
+      "Explore projects and case studies by Mohammad Ezzeddin Pratama — Next.js, Supabase, and AI-powered applications.",
+    url: "https://zeds.studio",
+    siteName: "Ezzeddin Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mohammad Ezzeddin Pratama | Full-Stack Developer",
+    description: "Building web apps with Next.js, Supabase, and AI.",
+    images: ["https://zeds.studio"],
+  },
 }
+
 
 const PAGE_TITLE = 'Blog'
 const PAGE_DESCRIPTION = 'Exploring the world of code, creativity, and constant learning.'

@@ -28,6 +28,30 @@ import agentia6 from "@/images/project/agentia-image/6.png";
 import agentia7 from "@/images/project/agentia-image/7.png";
 import agentia8 from "@/images/project/agentia-image/8.png";
 
+import s2cb from "@/images/project/s2c/s2c-banner.png"
+import s2cc from "@/images/project/s2c/s2c-cover.png"
+import s2c from "@/images/project/s2c/s2c-8 (1).png";
+import s2c2 from "@/images/project/s2c/s2c-8 (2).png";
+import s2c3 from "@/images/project/s2c/s2c-8 (3).png";
+import s2c4 from "@/images/project/s2c/s2c-8 (4).png";
+import s2c5 from "@/images/project/s2c/s2c-8 (5).png";
+import s2c6 from "@/images/project/s2c/s2c-8 (6).png";
+import s2c7 from "@/images/project/s2c/s2c-8 (7).png";
+import s2c8 from "@/images/project/s2c/s2c-8 (8).png";
+
+const s2cImages = [
+  s2cc.src,
+  s2cb.src,
+  s2c.src,
+  s2c2.src,
+  s2c3.src,
+  s2c4.src,
+  s2c5.src,
+  s2c6.src,
+  s2c7.src,
+  s2c8.src,
+];
+
 const parfumeImages = [
   parfume1.src,
   parfume2.src,
@@ -206,6 +230,24 @@ export const cards = [
         Agentia help UMKM people to get an efficient and effective way by automating their daily operational via
  whatsapp bot that integrated with n8n such as, customer center, ai chatbot , daily report for the owner of
  UMKM
+      </p>
+    ),
+  },
+  {
+        id: 8,
+    title: "Matani App",
+    description: "An Agriculture app where user be able to monitoring & manage their lands farm",
+    images: s2cImages,
+    ctaLink:"https://github.com/ezzeddinp/matani-app",
+    ctaText: <SiGithub size={20} />,
+    ctaDescriptionLink: "Matani App",
+    role: "Full-Stack",
+    collaborators: "@paulus_billy, @cleon_maheswara",
+    duration: "Sept 2025 - Oct 2025",
+    tools: "React Native, AccuWeather API, Sentinel Hub API, OpenMeteo API, NodeJs, PostgreSQL, Gemini AI",
+    content: () => (
+      <p>
+        Matani helps small lands owners to monitor and manage their lands more efficiently by providing real-time data of NDVI, temperature, and humidity. The app offers personalized draw polyline for specific monitoring areas, weather forecasts, and a user-friendly interface to optimize crop and reduce resource wastage.
       </p>
     ),
   }

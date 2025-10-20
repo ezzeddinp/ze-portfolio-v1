@@ -14,7 +14,12 @@ import {
   SiMongodb
 
 } from 'react-icons/si';
+import { TiWeatherPartlySunny } from "react-icons/ti";
+import { SiAccuweather } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
 
+import sentinelHub from "@/images/project/s2c/icon/sh-api.png"
+import Image from "next/image";
 
 type stacksProps = {
   [key: string]: JSX.Element;
@@ -92,9 +97,11 @@ export const STACK_COLORS: Record<string, StackPalette> = {
     dark: 'rgba(59, 130, 246, 0.16)',
     accent: 'rgba(59, 130, 246, 0.24)'
   }
+
 }
 
 const iconSize = '34px';
+const shAPI = sentinelHub;
 
 export const STACKS: stacksProps = {
   JavaScript: <SiJavascript size={iconSize} className="text-yellow-400" />,
@@ -109,6 +116,9 @@ export const STACKS: stacksProps = {
   Supabase: <SiSupabase size={iconSize} className="text-green-600" />,
   MongoDB: <SiMongodb size={iconSize} className="text-green-600" />,
   Prisma: <SiPrisma size={iconSize} className="text-black dark:text-white" />,
+  'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" style={{ width: iconSize, height: iconSize }} />,
+  'OpenMeteo API': <TiWeatherPartlySunny size={iconSize} className="text-black dark:text-white" />,
+  'AccuWeather API': <SiAccuweather size={iconSize} className="text-orange-600 dark:text-orange-500"  />,
   Expo: <SiExpo size={iconSize} className="text-black dark:text-white" />,
-
+  PostgreSQL: <BiLogoPostgresql size={iconSize} className="text-blue-700 dark:text-blue-600"  />
 };

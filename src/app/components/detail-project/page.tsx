@@ -108,7 +108,12 @@ const CardDetail: React.FC = () => {
                       title="Duration"
                       content={card.duration}
                     />
-                    <CardDetailSection title="Tools" content={card.tools} />
+                    <CardDetailSection
+                      title="Tools"
+                      content={
+                       card.tools 
+                      }
+                    />
                   </div>
                 </motion.div>
                 <motion.div

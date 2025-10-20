@@ -24,6 +24,13 @@ import { GrMysql } from "react-icons/gr";
 import SectionHeading from "@/common/components/elements/SectionHeading";
 import SectionSubHeading from "@/common/components/elements/SectionSubHeading";
 
+import { TiWeatherPartlySunny } from "react-icons/ti";
+import { SiAccuweather } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import sentinelHub from "@/images/project/s2c/icon/sh-api.png"
+
+const shAPI = sentinelHub;
+
 const iconSize = "25px";
 const toolsIcon: Record<string, JSX.Element> = {
   github: <SiGithub size={20} />,
@@ -64,6 +71,10 @@ const toolsIcon: Record<string, JSX.Element> = {
       height={85}
       />
     ),
+      'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" style={{ width: iconSize, height: iconSize }} />,
+      'OpenMeteo API': <TiWeatherPartlySunny size={iconSize} className="text-black dark:text-white" />,
+      'AccuWeather API': <SiAccuweather size={iconSize} className="text-orange-600 dark:text-orange-500"  />,
+      PostgreSQL: <BiLogoPostgresql size={iconSize} className="text-blue-700 dark:text-blue-600"  />
 };
 
 export default function ExpandableCardCardDemo() {
@@ -106,6 +117,7 @@ export default function ExpandableCardCardDemo() {
 const getCardGradient = (index: number) => {
   // Array of glass-like gradient combinations
   const gradients = [
+    "from-green-300/5 via-green-200/5 to-transparent dark:from-green-200/30 dark:via-green-700/20 dark:to-black/80",
     "from-green-500/5 via-green-400/5 to-transparent dark:from-green-400/30 dark:via-green-900/20 dark:to-black/80",
     "from-blue-500/5 via-blue-400/5 to-transparent dark:from-blue-700/30 dark:via-blue-900/20 dark:to-black/80",
     "from-orange-500/5 via-orange-400/5 to-transparent dark:from-orange-500/30 dark:via-orange-700/20 dark:to-black/80",
@@ -152,13 +164,13 @@ const getCardGradient = (index: number) => {
               {card.images && card.images.length > 0 && (
                 <motion.div layoutId={`image-${card.title}-${id}`}>
                   <Image
-                    width={390}
+                    width={450}
                     height={200}
                     src={card.images[0]} // Show the first image only
                     alt={`${card.title} - main image`}
                     placeholder="blur"
                     blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-                    className="h-[190px] md:h-52 lg:h-52 lg:w-72 rounded-sm object-cover object-center shadow-md"
+                    className="h-[190px] md:h-52 lg:h-52 md:w-[470px] rounded-sm object-cover object-center shadow-md"
                     
                   />
                 </motion.div>

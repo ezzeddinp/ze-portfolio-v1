@@ -236,7 +236,7 @@ export const cards = [
   {
         id: 8,
     title: "Matani App",
-    description: "An Agriculture app where user be able to monitoring & manage their lands farm",
+    description: "Monitor & Manage your lands",
     images: s2cImages,
     ctaLink:"https://github.com/ezzeddinp/matani-app",
     ctaText: <SiGithub size={20} />,
@@ -247,7 +247,7 @@ export const cards = [
     tools: "React Native, AccuWeather API, Sentinel Hub API, OpenMeteo API, NodeJs, PostgreSQL, Gemini AI",
     content: () => (
       <p>
-        Matani helps small lands owners to monitor and manage their lands more efficiently by providing real-time data of NDVI, temperature, and humidity. The app offers personalized draw polyline for specific monitoring areas, weather forecasts, and a user-friendly interface to optimize crop and reduce resource wastage.
+        Matani is An Agriculture app that me & my friend billy & cleon build for Hackathon. Matani helps small lands owners to monitor and manage their lands more efficiently by providing real-time data of NDVI, temperature, and humidity. The app offers personalized draw polyline for specific monitoring areas, weather forecasts, and a user-friendly interface to optimize crop and reduce resource wastage.
       </p>
     ),
   }

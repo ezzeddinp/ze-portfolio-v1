@@ -60,7 +60,7 @@ const ssImages = [
   ss7.src,
   ss8.src,
   ss9.src,
-]
+];
 
 const s2cImages = [
   s2cc.src,
@@ -284,8 +284,8 @@ export const cards = [
     ctaDescriptionLink: "SehatSantap",
     role: "CTO",
     collaborators: "@Terence (CEO), @Ricky (CFO), @Jonathan (COO), @Juan (CMO)",
-    duration: "Oct 2025 - Ongoing",
-    tools: "NextJS, TailwindCSS, Supabase, Midtrans, Gemini AI",
+    duration: "Oct 2025 - On Going",
+    tools: "NextJs, TailwindCSS, Supabase, Midtrans, Gemini AI",
     content: () => (
       <p>
         These are my group college entrepreneurship projects. SehatSantap is a healthy food recommendation app that leverages AI to provide personalized meal suggestions based on user preferences and dietary needs. Built with Next.js and TypeScript, the app features a sleek, responsive design using TailwindCSS. It integrates Supabase for secure user authentication and data management, while Midtrans handles seamless payment processing for premium features. Gemini AI powers the recommendation engine, ensuring users receive tailored meal plans that promote wellness and healthy eating habits.

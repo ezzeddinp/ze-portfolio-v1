@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Footer from "../Footer/footer";
 import CardDetailSection from "@/app/components/contents/card-detail-ui";
+
 import { SiGithub } from "react-icons/si";
 import SkeletonLoader from "@/app/components/detail-project/loading";
 import { cards } from "@/components/blocks/ui/expandable-card-data";
@@ -84,9 +85,14 @@ const CardDetail: React.FC = () => {
                   {card.description}
                 </p>
                 <div className="flex flex-col justify-center items-center pt-4 w-full max-w-4xl lg:max-w-xl mx-auto">
-                  <p className="text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left">
-                    {renderContent()}
-                  </p>
+                  {(() => {
+                    const content = renderContent();
+                    // If content is a <p> element, render as fragment/div to avoid <p> inside <p>
+                    if (React.isValidElement(content) && content.type === 'p') {
+                      return <div className="text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left">{content.props.children}</div>;
+                    }
+                    return <p className="text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left">{content}</p>;
+                  })()}
                 </div>
               </div>
               <motion.div>
@@ -110,13 +116,7 @@ const CardDetail: React.FC = () => {
                     />
                     <CardDetailSection
                       title="Tools"
-                      content={
-                        Array.isArray(card.tools)
-                          ? card.tools.length > 0
-                            ? card.tools.join(", ")
-                            : ""
-                          : card.tools
-                      }
+                      content={card.tools}
                     />
                   </div>
                 </motion.div>

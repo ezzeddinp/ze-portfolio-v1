@@ -4,13 +4,12 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { MdVerified as VerifiedIcon } from 'react-icons/md';
 import { useMenu } from '../../../../stores/menu';
 import useIsMobile from '../../../../hooks/useIsMobile';
 import { ModeToggle } from '@/app/components/theme-toggle';
 import MobileMenu from './sidebar/MobileMenu';
 import MobileMenuButton from './sidebar/MobileMenuButton';
-import TooltipVerified from '../elements/TooltipVerified';
+
 
 const menuVariants = {
   hidden: { x: '100%', opacity: 0 },
@@ -22,6 +21,11 @@ export default function MobileHeader(): JSX.Element {
   const isMobile = useIsMobile();
   const { isOpen, toggleMenu } = useMenu();
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,7 +63,7 @@ export default function MobileHeader(): JSX.Element {
             </TooltipVerified> */}
           </div>
         </div>
-        {isMobile && (
+        {hasMounted && isMobile && (
           <div className={clsx(
             'mt-1 flex items-center gap-5 lg:hidden',
             isOpen && 'flex-row !items-end justify-between'
@@ -69,7 +73,7 @@ export default function MobileHeader(): JSX.Element {
           </div>
         )}
       </motion.div>
-      {isMobile && (
+      {hasMounted && isMobile && (
         <AnimatePresence>
           {isOpen && (
             <>

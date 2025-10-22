@@ -116,7 +116,7 @@ export const STACKS: stacksProps = {
   Supabase: <SiSupabase size={iconSize} className="text-green-600" />,
   MongoDB: <SiMongodb size={iconSize} className="text-green-600" />,
   Prisma: <SiPrisma size={iconSize} className="text-black dark:text-white" />,
-  'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" style={{ width: iconSize, height: iconSize }} />,
+  'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" width={34} height={34} style={{ width: iconSize, height: iconSize }} />,
   'OpenMeteo API': <TiWeatherPartlySunny size={iconSize} className="text-black dark:text-white" />,
   'AccuWeather API': <SiAccuweather size={iconSize} className="text-orange-600 dark:text-orange-500"  />,
   Expo: <SiExpo size={iconSize} className="text-black dark:text-white" />,

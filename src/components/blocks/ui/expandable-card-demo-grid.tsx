@@ -71,7 +71,7 @@ const toolsIcon: Record<string, JSX.Element> = {
       height={85}
       />
     ),
-      'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" style={{ width: iconSize, height: iconSize }} />,
+        'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" width={25} height={25} style={{ width: iconSize, height: iconSize }} />,
       'OpenMeteo API': <TiWeatherPartlySunny size={iconSize} className="text-black dark:text-white" />,
       'AccuWeather API': <SiAccuweather size={iconSize} className="text-orange-600 dark:text-orange-500"  />,
       PostgreSQL: <BiLogoPostgresql size={iconSize} className="text-blue-700 dark:text-blue-600"  />
@@ -117,7 +117,8 @@ export default function ExpandableCardCardDemo() {
 const getCardGradient = (index: number) => {
   // Array of glass-like gradient combinations
   const gradients = [
-    "from-green-300/5 via-green-200/5 to-transparent dark:from-green-200/30 dark:via-green-700/20 dark:to-black/80",
+    "from-green-400/5 via-green-300/5 to-transparent dark:from-green-600/30 dark:via-green-800/20 dark:to-black/80",
+    "from-green-300/5 via-green-200/5 to-transparent dark:from-green-500/30 dark:via-green-700/20 dark:to-black/80",
     "from-green-500/5 via-green-400/5 to-transparent dark:from-green-400/30 dark:via-green-900/20 dark:to-black/80",
     "from-blue-500/5 via-blue-400/5 to-transparent dark:from-blue-700/30 dark:via-blue-900/20 dark:to-black/80",
     "from-orange-500/5 via-orange-400/5 to-transparent dark:from-orange-500/30 dark:via-orange-700/20 dark:to-black/80",
@@ -145,7 +146,7 @@ const getCardGradient = (index: number) => {
         </SectionSubHeading>
       </div>
       {/* Cards */}
-      <ul className="scrollbar-hide max-w-[390px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 pb-20 pt-5 lg:pt-16 lg:pb-32">
+      <ul className="scrollbar-hide max-w-[400px] md:max-w-2xl lg:max-w-3xl mx-auto px-1 md:px-4 lg:px-0 w-full flex md:flex-col lg:flex-col snap-x md:snap-none lg:snap-none snap-mandatory overflow-x-auto gap-4 pb-20 pt-5 lg:pt-16 lg:pb-32">
         {project.map((card, index) => (
   <motion.div
     layoutId={`card-${card.title}-${id}`}
@@ -157,20 +158,20 @@ const getCardGradient = (index: number) => {
     ${getCardGradient(index)}
     hover:bg-gradient-to-tl hover:shadow-xl
     border border-white/30 dark:border-white/10
-    transition-all duration-300 rounded-xl cursor-pointer min-w-[80%] md:min-w-[50%] lg:min-w-[30%]`}
+    transition-colors duration-500 ease-in-out rounded-xl cursor-pointer min-w-[90%] md:min-w-[50%] lg:min-w-[30%]`}
   >
             <div className="flex gap-2 md:gap-4 lg:gap-4 lg:pr-4 flex-col md:flex-row lg:flex-row lg:justify-between h-full">
               {/* Show only the first image initially */}
               {card.images && card.images.length > 0 && (
                 <motion.div layoutId={`image-${card.title}-${id}`}>
                   <Image
-                    width={450}
+                    width={595}
                     height={200}
                     src={card.images[0]} // Show the first image only
                     alt={`${card.title} - main image`}
                     placeholder="blur"
                     blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkz8AAAgEBAFtqJpAAAAAASUVORK5CYII="
-                    className="h-[190px] md:h-52 lg:h-52 md:w-[470px] rounded-sm object-cover object-center shadow-md"
+                    className="h-[190px] md:h-52 lg:h-52 md:w-[595px] rounded-sm object-cover object-center shadow-md"
                     
                   />
                 </motion.div>

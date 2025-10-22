@@ -57,7 +57,7 @@ const CardDetail: React.FC = () => {
         <motion.div
           className="flex flex-col justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+              
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.div
@@ -112,18 +112,10 @@ const CardDetail: React.FC = () => {
                       title="Tools"
                       content={
                         Array.isArray(card.tools)
-                          ? card.tools.map((tool, idx) => (
-                              <span key={idx} style={{ marginRight: 8, display: "inline-block" }}>
-                                {require("@/components/blocks/ui/expandable-card-demo-grid.tsx").toolsIcon[tool.trim()] || tool.trim()}
-                              </span>
-                            ))
-                          : typeof card.tools === "string"
-                            ? card.tools.split(/,|\n/).map((tool, idx) => (
-                                <span key={idx} style={{ marginRight: 8, display: "inline-block" }}>
-                                  {require("@/components/blocks/ui/expandable-card-demo-grid.tsx").toolsIcon[tool.trim()] || tool.trim()}
-                                </span>
-                              ))
-                            : card.tools
+                          ? card.tools.length > 0
+                            ? card.tools.join(", ")
+                            : ""
+                          : card.tools
                       }
                     />
                   </div>
@@ -178,9 +170,9 @@ const CardDetail: React.FC = () => {
                     key={index}
                     src={url}
                     alt={`${card.title} image ${index + 1}`}
-                    width={390}
+                    width={405}
                     height={200}
-                    className="h-[190px] lg:h-[300px] lg:w-[600px] rounded-sm"
+                    className="h-[190px] lg:h-[300px] lg:w-[615px] rounded-sm"
                     style={{ objectFit: "cover", objectPosition: "center top" }}
                   />
                 ))}

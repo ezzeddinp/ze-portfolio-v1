@@ -111,7 +111,19 @@ const CardDetail: React.FC = () => {
                     <CardDetailSection
                       title="Tools"
                       content={
-                       card.tools 
+                        Array.isArray(card.tools)
+                          ? card.tools.map((tool, idx) => (
+                              <span key={idx} style={{ marginRight: 8, display: "inline-block" }}>
+                                {require("@/components/blocks/ui/expandable-card-demo-grid.tsx").toolsIcon[tool.trim()] || tool.trim()}
+                              </span>
+                            ))
+                          : typeof card.tools === "string"
+                            ? card.tools.split(/,|\n/).map((tool, idx) => (
+                                <span key={idx} style={{ marginRight: 8, display: "inline-block" }}>
+                                  {require("@/components/blocks/ui/expandable-card-demo-grid.tsx").toolsIcon[tool.trim()] || tool.trim()}
+                                </span>
+                              ))
+                            : card.tools
                       }
                     />
                   </div>

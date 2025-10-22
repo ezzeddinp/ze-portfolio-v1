@@ -39,6 +39,29 @@ import s2c6 from "@/images/project/s2c/s2c-8 (6).png";
 import s2c7 from "@/images/project/s2c/s2c-8 (7).png";
 import s2c8 from "@/images/project/s2c/s2c-8 (8).png";
 
+import ss from "@/images/project/sehatsantap/sehatsantap (1).png";
+import ss2 from "@/images/project/sehatsantap/sehatsantap (2).png";
+import ss3 from "@/images/project/sehatsantap/sehatsantap (3).png";
+import ss4 from "@/images/project/sehatsantap/sehatsantap (4).png";
+import ss5 from "@/images/project/sehatsantap/sehatsantap (5).png";
+import ss6 from "@/images/project/sehatsantap/sehatsantap (6).png";
+import ss7 from "@/images/project/sehatsantap/sehatsantap (7).png";
+import ss8 from "@/images/project/sehatsantap/sehatsantap (8).png";
+import ss9 from "@/images/project/sehatsantap/sehatsantap (9).png";
+
+
+const ssImages = [
+  ss.src,
+  ss2.src,
+  ss3.src,
+  ss4.src,
+  ss5.src,
+  ss6.src,
+  ss7.src,
+  ss8.src,
+  ss9.src,
+]
+
 const s2cImages = [
   s2cc.src,
   s2cb.src,
@@ -250,5 +273,23 @@ export const cards = [
         Matani is An Agriculture app that me & my friend billy & cleon build for Hackathon. Matani helps small lands owners to monitor and manage their lands more efficiently by providing real-time data of NDVI, temperature, and humidity. The app offers personalized draw polyline for specific monitoring areas, weather forecasts, and a user-friendly interface to optimize crop and reduce resource wastage.
       </p>
     ),
+  },
+  {
+    id: 9,
+    title: "SehatSantap",
+    description: "Your personalized healthy food recommendation app",
+    images: ssImages,
+    ctaLink:"https://github.com/ezzeddinp",
+    ctaText: <SiGithub size={20} />,
+    ctaDescriptionLink: "SehatSantap",
+    role: "CTO",
+    collaborators: "@Terence (CEO), @Ricky (CFO), @Jonathan (COO), @Juan (CMO)",
+    duration: "Oct 2025 - Ongoing",
+    tools: "NextJs, TailwindCSS, Supabase, Midtrans, Gemini AI",
+    content: () => (
+      <p>
+        These are my group college entrepreneurship projects. SehatSantap is a healthy food recommendation app that leverages AI to provide personalized meal suggestions based on user preferences and dietary needs. Built with Next.js and TypeScript, the app features a sleek, responsive design using TailwindCSS. It integrates Supabase for secure user authentication and data management, while Midtrans handles seamless payment processing for premium features. Gemini AI powers the recommendation engine, ensuring users receive tailored meal plans that promote wellness and healthy eating habits.
+      </p>
+    )
   }
 ];

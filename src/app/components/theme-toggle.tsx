@@ -1,28 +1,37 @@
 "use client"
 
-import * as React from "react"
+import React, { useEffect, useState } from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
 
   const toggleTheme = () => {
-    if (theme === "light") {
-      setTheme("dark")
-    } else {
-      setTheme("light")
-    }
+    setTheme(resolvedTheme === "light" ? "dark" : "light")
   }
 
   return (
-    <Button className="rounded-full bg-transparent w-10 h-10 z-50" variant="ghost" size="icon" onClick={toggleTheme}>
-      {theme === "light" ? (
+    <Button
+      className="rounded-full bg-transparent w-10 h-10 z-50"
+      variant="ghost"
+      size="icon"
+      onClick={toggleTheme}
+      aria-label="Toggle theme"
+    >
+      {resolvedTheme === "light" ? (
         <>
           <Sun
             className="h-[14px] w-[14px] rotate-0 scale-100 transition-all"
-            color="#FFD700" // Set the initial color for the sun icon (yellow)
+            color="#FFD700"
           />
           <span className="sr-only">Switch to dark mode</span>
         </>
@@ -30,7 +39,7 @@ export function ModeToggle() {
         <>
           <Moon
             className="h-[14px] w-[14px] rotate-0 scale-100 transition-all"
-            color="#FFFFFF" // Set the color for the moon icon when in dark mode (white)
+            color="#FFFFFF"
           />
           <span className="sr-only">Switch to light mode</span>
         </>

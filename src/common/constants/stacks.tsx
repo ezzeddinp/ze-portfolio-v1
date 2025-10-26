@@ -42,7 +42,7 @@ export const STACK_COLORS: Record<string, StackPalette> = {
     dark: 'rgba(49, 120, 198, 0.16)',
     accent: 'rgba(49, 120, 198, 0.24)'
   },
-  'Next.js': {
+  'NextJs': {
     light: 'rgba(24, 24, 27, 0.04)',
     dark: 'rgba(255, 255, 255, 0.1)',
     accent: 'rgba(24, 24, 27, 0.2)'
@@ -106,7 +106,7 @@ const shAPI = sentinelHub;
 export const STACKS: stacksProps = {
   JavaScript: <SiJavascript size={iconSize} className="text-yellow-400" />,
   TypeScript: <SiTypescript size={iconSize} className="text-blue-400" />,
-  'Next.js': <SiNextdotjs size={iconSize} className='text-black dark:text-white' />,
+  'NextJs': <SiNextdotjs size={iconSize} className='text-black dark:text-white' />,
   TailwindCSS: <SiTailwindcss size={iconSize} className="text-cyan-300" />,
   'React Native': <SiReact size={iconSize} className="text-sky-600" />,
   'Node JS': <SiNodedotjs size={iconSize} className="text-green-600" />,
@@ -116,7 +116,7 @@ export const STACKS: stacksProps = {
   Supabase: <SiSupabase size={iconSize} className="text-green-600" />,
   MongoDB: <SiMongodb size={iconSize} className="text-green-600" />,
   Prisma: <SiPrisma size={iconSize} className="text-black dark:text-white" />,
-  'Sentinel Hub API': <Image src={shAPI.src ?? shAPI} alt="Sentinel Hub" width={34} height={34} style={{ width: iconSize, height: iconSize }} />,
+  'Sentinel Hub API': <img src={shAPI.src ?? shAPI} alt="Sentinel Hub" style={{ width: iconSize, height: iconSize }} />,
   'OpenMeteo API': <TiWeatherPartlySunny size={iconSize} className="text-black dark:text-white" />,
   'AccuWeather API': <SiAccuweather size={iconSize} className="text-orange-600 dark:text-orange-500"  />,
   Expo: <SiExpo size={iconSize} className="text-black dark:text-white" />,

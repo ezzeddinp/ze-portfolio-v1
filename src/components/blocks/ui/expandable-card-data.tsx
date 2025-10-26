@@ -60,7 +60,7 @@ const ssImages = [
   ss7.src,
   ss8.src,
   ss9.src,
-];
+]
 
 const s2cImages = [
   s2cc.src,
@@ -284,7 +284,7 @@ export const cards = [
     ctaDescriptionLink: "SehatSantap",
     role: "CTO",
     collaborators: "@Terence (CEO), @Ricky (CFO), @Jonathan (COO), @Juan (CMO)",
-    duration: "Oct 2025 - On Going",
+    duration: "Oct 2025 - Ongoing",
     tools: "NextJs, TailwindCSS, Supabase, Midtrans, Gemini AI",
     content: () => (
       <p>

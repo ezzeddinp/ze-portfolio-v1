@@ -32,7 +32,7 @@ import sentinelHub from "@/images/project/s2c/icon/sh-api.png"
 const shAPI = sentinelHub;
 
 const iconSize = "25px";
-const toolsIcon: Record<string, JSX.Element> = {
+export const toolsIcon: Record<string, JSX.Element> = {
   github: <SiGithub size={20} />,
   JavaScript: <SiJavascript size={iconSize} className="text-yellow-400" />,
   TypeScript: <SiTypescript size={iconSize} className="text-blue-400" />,

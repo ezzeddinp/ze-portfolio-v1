@@ -7,10 +7,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Footer from "../Footer/footer";
 import CardDetailSection from "@/app/components/contents/card-detail-ui";
-
 import { SiGithub } from "react-icons/si";
 import SkeletonLoader from "@/app/components/detail-project/loading";
 import { cards } from "@/components/blocks/ui/expandable-card-data";
+import { toolsIcon } from '@/components/blocks/ui/expandable-card-demo-grid';
 
 const ctaTextLogo = {
   github: <SiGithub size={20} />,
@@ -25,7 +25,7 @@ const CardDetail: React.FC = () => {
     : null;
   const [loading, setLoading] = useState(true);
 
-  const card = cards.find((card) => card.title === decodedId);
+  const card = cards.find((card) => card.title === decodedId); // 
 
   useEffect(() => {
     if (card) {
@@ -39,12 +39,35 @@ const CardDetail: React.FC = () => {
   const imageUrls: string[] = Array.isArray(card.images) ? card.images : [];
   const GithubIcon = ctaTextLogo.github;
 
+  // Determine CTA element: prefer card.ctaText (if provided), otherwise fallback to GithubIcon
+  const ctaElement = card.ctaText
+    ? React.isValidElement(card.ctaText)
+      ? card.ctaText
+      : <p className="text-left text-sm font-semibold">{card.ctaText}</p>
+    : GithubIcon;
+
   // Render the content based on whether it's a function or string
   const renderContent = () => {
     if (typeof card.content === "function") {
       return card.content();
     }
     return card.content;
+  };
+
+  // Insert a line break after the second comma in a collaborators string
+  const formatCollaborators = (collab: any) => {
+    if (!collab || typeof collab !== 'string') return collab;
+    const parts = collab.split(',').map(p => p.trim());
+    if (parts.length <= 2) return collab;
+    const first = parts.slice(0, 2).join(', ') + ','; // keep trailing comma
+    const rest = parts.slice(2).join(', ');
+    return (
+      <>
+        {first}
+        <br />
+        {rest}
+      </>
+    );
   };
 
   return (
@@ -58,7 +81,7 @@ const CardDetail: React.FC = () => {
         <motion.div
           className="flex flex-col justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
-              
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <motion.div
@@ -85,14 +108,9 @@ const CardDetail: React.FC = () => {
                   {card.description}
                 </p>
                 <div className="flex flex-col justify-center items-center pt-4 w-full max-w-4xl lg:max-w-xl mx-auto">
-                  {(() => {
-                    const content = renderContent();
-                    // If content is a <p> element, render as fragment/div to avoid <p> inside <p>
-                    if (React.isValidElement(content) && content.type === 'p') {
-                      return <div className="text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left">{content.props.children}</div>;
-                    }
-                    return <p className="text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left">{content}</p>;
-                  })()}
+                  <div className="text-gray-800 dark:text-neutral-400 text-[15px] lg:text-md leading-relaxed font-light text-left">
+                    {renderContent()}
+                  </div>
                 </div>
               </div>
               <motion.div>
@@ -102,11 +120,11 @@ const CardDetail: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
-                  <div className="flex flex-col">
+                    <div className="flex flex-col">
                     <CardDetailSection title="Role" content={card.role} />
                     <CardDetailSection
                       title="Collaborators"
-                      content={card.collaborators}
+                      content={formatCollaborators(card.collaborators)}
                     />
                   </div>
                   <div className="flex flex-col">
@@ -116,7 +134,21 @@ const CardDetail: React.FC = () => {
                     />
                     <CardDetailSection
                       title="Tools"
-                      content={card.tools}
+                      content={
+                        Array.isArray(card.tools)
+                          ? card.tools.map((tool, idx) => (
+                              <span key={idx} style={{ marginRight: 8, display: "inline-block" }}>
+                                {toolsIcon[tool.trim()] || tool.trim()}
+                              </span>
+                            ))
+                          : typeof card.tools === "string"
+                          ? card.tools.split(/,|\n/).map((tool, idx) => (
+                              <span key={idx} style={{ marginRight: 8, display: "inline-block" }}>
+                                {toolsIcon[tool.trim()] || tool.trim()}
+                              </span>
+                            ))
+                          : card.tools
+                      }
                     />
                   </div>
                 </motion.div>
@@ -134,13 +166,12 @@ const CardDetail: React.FC = () => {
                     >
                       <button className="flex flex-row justify-between gap-4 w-full">
                         <div className="flex flex-row gap-2 items-center">
-                          {GithubIcon}
-                          <p className="text-left text-sm font-semibold">
-                            {card.ctaText}
-                          </p>
-                          <p className="text-left text-sm font-semibold">
-                            {card.ctaDescriptionLink}
-                          </p>
+                          {ctaElement}
+                          {card.ctaDescriptionLink && (
+                            <p className="text-left text-sm font-semibold">
+                              {card.ctaDescriptionLink}
+                            </p>
+                          )}
                         </div>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -170,9 +201,9 @@ const CardDetail: React.FC = () => {
                     key={index}
                     src={url}
                     alt={`${card.title} image ${index + 1}`}
-                    width={405}
+                    width={390}
                     height={200}
-                    className="h-[190px] lg:h-[300px] lg:w-[615px] rounded-sm"
+                    className="h-[190px] lg:h-[300px] lg:w-[600px] rounded-sm"
                     style={{ objectFit: "cover", objectPosition: "center top" }}
                   />
                 ))}

@@ -1,0 +1,5 @@
+{
+  "description": "Chrome DevTools app-specific probe placeholder",
+  "generatedBy": "local-dev",
+  "note": "This file prevents 404 console noise when DevTools probes /.well-known/appspecific/"
+}

@@ -1,16 +1,12 @@
 // src/app/components/CardDetailClient.tsx
 
-'use client';  // This directive marks the component as a Client Component
+'use client';
 
-import dynamic from 'next/dynamic';
+import CardDetail from '@/app/components/detail-project/page';
+import React from 'react';
 
-// Dynamically import the CardDetail component
-const CardDetail = dynamic(() => import('@/app/components/detail-project/page'), {
-  ssr: false,  // Disable server-side rendering for this component
-});
-
-const CardDetailClient: React.FC = () => {
-  return <CardDetail />;
+const CardDetailClient: React.FC<{ id: string | null }> = ({ id }) => {
+  return <CardDetail id={id} />;
 };
 
 export default CardDetailClient;

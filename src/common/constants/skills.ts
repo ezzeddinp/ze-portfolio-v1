@@ -4,7 +4,7 @@ export type SkillDefinition = {
 }
 
 export const SKILLS: SkillDefinition[] = [
-  { name: 'Next.js', category: 'Front-End' },
+  { name: 'NextJs', category: 'Front-End' },
   { name: 'React Native', category: 'Mobile' },
   { name: 'TailwindCSS', category: 'Styling' },
   { name: 'JavaScript', category: 'Front-End' },

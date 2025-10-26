@@ -16,12 +16,15 @@ const ctaTextLogo = {
   github: <SiGithub size={20} />,
 };
 
-const CardDetail: React.FC = () => {
-  const { id } = useParams();
-  const decodedId = id
-    ? Array.isArray(id)
-      ? decodeURIComponent(id[0])
-      : decodeURIComponent(id)
+type CardDetailProps = { id?: string | null };
+
+const CardDetail: React.FC<CardDetailProps> = ({ id: propId }) => {
+  const params = useParams();
+  const rawId = propId ?? params?.id ?? null
+  const decodedId = rawId
+    ? Array.isArray(rawId)
+      ? decodeURIComponent(rawId[0])
+      : decodeURIComponent(String(rawId))
     : null;
   const [loading, setLoading] = useState(true);
 

@@ -11,7 +11,7 @@ import { Suspense } from 'react';
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
-const siteUrl = 'https://zeddin.vercel.app';
+const siteUrl = 'https://zeds.studio';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${siteUrl}/Home.png`,
+        url: `${siteUrl}`,
         width: 1200,
         height: 630,
         alt: "Zeddin's portfolio hero section",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     title: "Zeddin's Portfolio",
     description: 'Discover software projects, writing, and experience by Mohammad Ezzeddin Pratama.',
     creator: '@ezzeddinp',
-    images: [`${siteUrl}/Home.png`],
+    images: [`${siteUrl}`],
   },
   robots: {
     index: true,

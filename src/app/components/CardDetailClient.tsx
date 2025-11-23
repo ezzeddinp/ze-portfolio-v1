@@ -5,7 +5,11 @@
 import CardDetail from '@/app/components/detail-project/page';
 import React from 'react';
 
-const CardDetailClient: React.FC<{ id: string | null }> = ({ id }) => {
+interface CardDetailClientProps {
+  id?: string | null;
+}
+
+const CardDetailClient: React.FC<CardDetailClientProps> = ({ id = null }) => {
   return <CardDetail id={id} />;
 };
 

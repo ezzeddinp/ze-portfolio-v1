@@ -1,12 +1,20 @@
 // src/app/layouts/ui/page.tsx
 
 import React from 'react';
-import CardDetailClient from '../../../app/components/CardDetailClient';  // Adjust the import path as necessary
+import CardDetailClient from '@/app/components/CardDetailClient';
 
-const MainCardDetail: React.FC = () => {
+interface MainCardDetailProps {
+  params?: {
+    id?: string;
+  };
+}
+
+const MainCardDetail: React.FC<MainCardDetailProps> = ({ params }) => {
+  const id = params?.id ?? null;
+
   return (
     <div>
-      <CardDetailClient />  {/* Use the Client Component here */}
+      <CardDetailClient id={id} />
     </div>
   );
 };

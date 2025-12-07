@@ -24,7 +24,7 @@ export default function Footer() {
                         <PiDotOutlineFill />
                         <a className='text-sm lg:text-[15px]' target="_blank" href="https://www.linkedin.com/in/mohammad-ezzeddin-pratama/" rel="noopener noreferrer">LinkedIn</a>
                         <PiDotOutlineFill />
-                        <a className='text-sm lg:text-[15px]' target="_blank" href="/CV ATS Mohammad Ezzeddin Pratama.pdf">Resume</a>
+                        <a className='text-sm lg:text-[15px]' target="_blank" href="/CV ATS 2025 Mohammad Ezzeddin Pratama Intern.pdf">Resume</a>
                     </div>
                 </SectionSubHeading>
                 <SectionSubHeading>
